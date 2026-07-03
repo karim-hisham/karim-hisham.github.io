@@ -89,6 +89,44 @@
   .email .eb { padding: 10px 12px; color: var(--muted); }
   .email .eb div { padding: 2.5px 0; }
   .ok { color: var(--green); font-weight: 700; }
+  .snap { border: 1px solid var(--line); border-radius: 10px; margin: 12px 0 10px; overflow: hidden; font-size: 11.5px; background: #fff; }
+  .snap-cap { font-size: 10px; color: #98a1ac; padding: 5px 10px; border-top: 1px dashed var(--line); }
+  .xls-head { background: #217346; color: #fff; padding: 6px 10px; font-weight: 600; font-size: 11.5px; display: flex; justify-content: space-between; align-items: center; }
+  .xls-head i { font-style: normal; font-size: 10px; opacity: 0.85; }
+  .xls-tabs { display: flex; gap: 2px; background: #eef2ef; padding: 4px 8px 0; }
+  .xls-tabs span { font-size: 10.5px; padding: 2px 10px; background: #fff; border-radius: 4px 4px 0 0; border: 1px solid #dfe5e0; border-bottom: none; color: #217346; font-weight: 600; }
+  .xls-tabs span.off { background: #e2e8e3; color: #7c857e; font-weight: 500; }
+  .xls table { width: 100%; border-collapse: collapse; }
+  .xls th, .xls td { border: 1px solid #eef1f4; padding: 4px 8px; text-align: right; font-variant-numeric: tabular-nums; font-size: 11px; }
+  .xls th { background: #f3f6f4; color: #47505c; font-weight: 600; }
+  .xls th:first-child, .xls td:first-child { text-align: left; }
+  .pos { color: var(--green); font-weight: 600; } .neg { color: #C0392B; font-weight: 600; }
+  .pq { padding: 9px 12px; }
+  .pq b { font-size: 10px; letter-spacing: 0.8px; color: #0F6E56; }
+  .pq div { padding: 3px 0 3px 10px; border-left: 2px solid #d9e5e0; color: #5b6572; margin-left: 2px; font-size: 11.5px; }
+  .pq div.on { border-color: #0F6E56; color: var(--ink); font-weight: 600; }
+  .agebars { padding: 10px 12px; }
+  .agebars .row { display: flex; align-items: center; gap: 8px; padding: 3.5px 0; }
+  .agebars .row > span { width: 46px; color: var(--muted); font-size: 10.5px; flex-shrink: 0; }
+  .agebars .row i { height: 11px; border-radius: 3px; background: #378ADD; }
+  .agebars .warn i { background: #E5A54B; } .agebars .bad i { background: #D96A5B; }
+  .agebars .row b { font-size: 10.5px; font-weight: 600; }
+  .formsnap { padding: 8px 12px; }
+  .formsnap .fr { display: flex; justify-content: space-between; align-items: center; gap: 8px; border-bottom: 1px dashed var(--line); padding: 5px 0; color: #47505c; font-size: 11.5px; }
+  .formsnap .fr:last-child { border-bottom: none; }
+  .stat { font-size: 9.5px; font-weight: 700; padding: 1px 8px; border-radius: 999px; letter-spacing: 0.3px; }
+  .s-ok { background: var(--green-bg); color: var(--green); } .s-due { background: var(--amber-bg); color: var(--amber); }
+  .flowsnap { display: flex; align-items: center; gap: 5px; padding: 13px 12px; flex-wrap: wrap; }
+  .flowsnap span { border: 1px solid var(--line); background: var(--bg); padding: 3px 9px; border-radius: 7px; font-size: 10.5px; }
+  .flowsnap em { color: #c3cad3; font-style: normal; }
+  .flowsnap .ctrl { border-color: #185FA5; color: #0C447C; background: #E6F1FB; font-weight: 600; }
+  .scen { display: flex; gap: 5px; padding: 9px 10px 7px; }
+  .scen span { font-size: 10px; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); font-weight: 600; }
+  .scen .on { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .slides { display: flex; gap: 8px; padding: 11px 12px; }
+  .slides div { flex: 1; aspect-ratio: 4/3; border: 1px solid var(--line); border-radius: 6px; background: linear-gradient(180deg, #fff 0%, #f2f5f8 100%); padding: 7px; font-size: 8.5px; color: #8a93a0; }
+  .slides div b { display: block; height: 4px; width: 70%; background: #B5D4F4; border-radius: 2px; margin-bottom: 5px; }
+  .slides div i { display: block; height: 3px; background: #e5e9ee; border-radius: 2px; margin: 3px 0; }
   .journey { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; counter-reset: step; }
   .step { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 20px 18px; }
   .step .num { font-size: 12px; font-weight: 700; color: var(--navy); letter-spacing: 1px; }
@@ -185,6 +223,10 @@
   <div class="wrap">
     <h2 class="reveal">Products — before &amp; after</h2>
     <p class="lbl reveal">Standard, fixed-scope, ready for deployment. Each one solves a specific mess the same way it was solved inside multinationals. Every sample below runs on illustrative data.</p>
+    <div class="reveal" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 20px;margin-bottom:20px;">
+      <span style="font-size:13.5px;color:var(--muted);">Every product has a <b style="color:var(--ink);font-weight:600;">live dummy-data demo</b> — see it running before you buy.</span>
+      <a class="btn" style="padding:8px 16px;font-size:13.5px;" href="mailto:Karim.Hisham.Elshafei@gmail.com?subject=Demo%20walkthrough%20request&body=Hi%20Kareem%2C%0A%0AI'd%20like%20a%20walkthrough%20of%3A%20%0AMy%20company%2Frole%3A%20%0AAvailability%3A%20%0A%0AThanks!">Request a 15-min walkthrough →</a>
+    </div>
     <div class="grid">
 
       <div class="card reveal">
@@ -192,7 +234,17 @@
         <h3>FP&amp;A master dashboard</h3>
         <div class="ba">
           <div class="b"><span class="tag">BEFORE</span>Budget lives in 19 workbooks. Versions fly by email. Nobody trusts the numbers.</div>
-          <div class="a"><span class="tag">AFTER</span>One model — budget, reforecast and actuals side by side. Versioned baselines, locked budget, refresh in minutes.</div>
+          <div class="a"><span class="tag">AFTER</span>One model — budget, reforecast and actuals side by side. Versioned baselines, locked budget, monthly review pack that reads itself.</div>
+        </div>
+        <div class="snap" aria-hidden="true">
+          <div class="scen"><span>BUD</span><span class="on">ACT</span><span>RFC 3+9</span></div>
+          <div class="xls"><table>
+            <tr><th>P&amp;L</th><th>BUD</th><th>ACT</th><th>Δ%</th></tr>
+            <tr><td>Revenue</td><td>12.0M</td><td>12.4M</td><td class="pos">+3.4%</td></tr>
+            <tr><td>Opex</td><td>(7.1M)</td><td>(6.9M)</td><td class="pos">+2.8%</td></tr>
+            <tr><td>EBITDA</td><td>4.9M</td><td>5.5M</td><td class="pos">+12.2%</td></tr>
+          </table></div>
+          <div class="snap-cap">concept snapshot · illustrative data</div>
         </div>
         <span class="tool t-pbi">POWER BI</span><span class="tool t-pq">POWER QUERY</span><span class="tool t-dax">DAX</span>
       </div>
@@ -204,6 +256,17 @@
           <div class="b"><span class="tag">BEFORE</span>Cash forecast rebuilt by hand every month. Assumptions buried in someone's head.</div>
           <div class="a"><span class="tag">AFTER</span>Direct-method engine: AR runoff by ageing profile, TB classification, P&amp;L-to-cash conversion. Assumptions live in one rules workbook — edit and refresh.</div>
         </div>
+        <div class="snap" aria-hidden="true">
+          <div class="pq">
+            <b>APPLIED STEPS</b>
+            <div>Source — TB · AR ageing · P&amp;L</div>
+            <div>Classify — cash-flow tags on trial balance</div>
+            <div>AR runoff — ageing × collection profile</div>
+            <div>Convert — P&amp;L to cash timing</div>
+            <div class="on">Output — 13-week direct cash flow ✓</div>
+          </div>
+          <div class="snap-cap">Power Query engine concept · illustrative</div>
+        </div>
         <span class="tool t-pq">POWER QUERY</span><span class="tool t-dax">DAX</span><span class="tool t-xl">EXCEL</span>
       </div>
 
@@ -214,6 +277,15 @@
           <div class="b"><span class="tag">BEFORE</span>Collections chased from static exports. DSO is a surprise every quarter.</div>
           <div class="a"><span class="tag">AFTER</span>Live ageing by bucket and owner, collection profiles per department, exception overrides, working-capital KPIs on one page.</div>
         </div>
+        <div class="snap" aria-hidden="true">
+          <div class="agebars">
+            <div class="row"><span>0–30</span><i style="width:82%"></i><b>1.84M</b></div>
+            <div class="row"><span>31–60</span><i style="width:38%"></i><b>640K</b></div>
+            <div class="row warn"><span>61–90</span><i style="width:16%"></i><b>210K</b></div>
+            <div class="row bad"><span>90+</span><i style="width:8%"></i><b>95K</b></div>
+          </div>
+          <div class="snap-cap">ageing concept · illustrative data</div>
+        </div>
         <span class="tool t-pbi">POWER BI</span><span class="tool t-ns">NETSUITE</span>
       </div>
 
@@ -223,6 +295,16 @@
         <div class="ba">
           <div class="b"><span class="tag">BEFORE</span>Recs in inconsistent formats. Findings buried in tabs nobody opens. Audit scramble.</div>
           <div class="a"><span class="tag">AFTER</span>A template per account class — AR, AP, accruals, prepayments, fixed assets, equity — with SOX-aligned analysis classes and an automated reportable-items summary.</div>
+        </div>
+        <div class="snap" aria-hidden="true">
+          <div class="xls-head">BS reconciliation — May <i>auto-summary ✓</i></div>
+          <div class="xls-tabs"><span class="off">Summary</span><span>AR</span><span class="off">AP</span><span class="off">Accruals</span><span class="off">FA</span></div>
+          <div class="xls"><table>
+            <tr><th>Account</th><th>GL</th><th>Sub-ledger</th><th>Δ</th><th>Class</th></tr>
+            <tr><td>Trade AR</td><td>4,120,300</td><td>4,120,300</td><td>0</td><td><span class="stat s-ok">CORRECT</span></td></tr>
+            <tr><td>Accrued exp.</td><td>812,450</td><td>798,210</td><td>14,240</td><td><span class="stat s-due">REPORTABLE</span></td></tr>
+          </table></div>
+          <div class="snap-cap">Excel template concept · illustrative data</div>
         </div>
         <span class="tool t-xl">EXCEL</span><span class="tool t-vba">VBA</span>
       </div>
@@ -248,10 +330,33 @@
 
       <div class="card reveal">
         <span class="badge-deploy">✓ DEPLOY-READY</span>
+        <h3>Tax filings &amp; forms — VAT · WHT · CIT</h3>
+        <div class="ba">
+          <div class="b"><span class="tag">BEFORE</span>Deadlines tracked on sticky notes. Forms rebuilt from scratch every cycle. Penalties one missed date away.</div>
+          <div class="a"><span class="tag">AFTER</span>A filing calendar with prepared forms per jurisdiction — reviewed, filed, archived. My own track record: three jurisdictions, two years, zero penalties.</div>
+        </div>
+        <div class="snap" aria-hidden="true">
+          <div class="formsnap">
+            <div class="fr"><span>VAT return — Egypt · due 28th</span><span class="stat s-ok">FILED</span></div>
+            <div class="fr"><span>WHT Form 41 — Egypt · quarterly</span><span class="stat s-ok">FILED</span></div>
+            <div class="fr"><span>VAT return — KSA · bimonthly</span><span class="stat s-ok">FILED</span></div>
+            <div class="fr"><span>CIT estimate — UAE · annual</span><span class="stat s-due">IN PREP</span></div>
+          </div>
+          <div class="snap-cap">filing calendar concept · illustrative</div>
+        </div>
+        <span class="tool t-xl">EXCEL</span><span class="chip">EG · UAE · KSA portals</span>
+      </div>
+
+      <div class="card reveal">
+        <span class="badge-deploy">✓ DEPLOY-READY</span>
         <h3>Process mapping pack</h3>
         <div class="ba">
           <div class="b"><span class="tag">BEFORE</span>O2C and P2P live in people's heads. Every audit starts with archaeology.</div>
           <div class="a"><span class="tag">AFTER</span>Mapped flows with control points, approval matrices and SOP documentation — audit-ready on demand.</div>
+        </div>
+        <div class="snap" aria-hidden="true">
+          <div class="flowsnap"><span>Order</span><em>→</em><span class="ctrl">Credit check</span><em>→</em><span>Invoice</span><em>→</em><span>Dunning</span><em>→</em><span>Cash app</span><em>→</em><span class="ctrl">Recon</span></div>
+          <div class="snap-cap">O2C map concept · control points in blue</div>
         </div>
         <span class="chip">O2C / P2P</span><span class="chip">RACI</span><span class="chip">Controls</span>
       </div>
@@ -262,6 +367,14 @@
         <div class="ba">
           <div class="b"><span class="tag">BEFORE</span>Tools die the day their builder leaves. Knowledge walks out the door.</div>
           <div class="a"><span class="tag">AFTER</span>Super-user guides, technical documentation and training decks — your team runs the engine without me.</div>
+        </div>
+        <div class="snap" aria-hidden="true">
+          <div class="slides">
+            <div><b></b><i></i><i></i><i></i>Super-user guide</div>
+            <div><b></b><i></i><i></i><i></i>Refresh runbook</div>
+            <div><b></b><i></i><i></i><i></i>Close training</div>
+          </div>
+          <div class="snap-cap">enablement pack concept</div>
         </div>
         <span class="chip">Super-user guides</span><span class="chip">Training decks</span><span class="chip">Handover</span>
       </div>
