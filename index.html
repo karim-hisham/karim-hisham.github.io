@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kareem Hesham — Finance & BI | FP&A, IFRS Close, Power BI & Automation</title>
+<meta name="description" content="Freelance & fractional finance: FP&A, financial modeling, IFRS statutory close, SOX reconciliation, month-end close cadence, Power BI dashboards, and Excel/Power Query automation.">
+<style>
+  :root {
+    --navy: #185FA5; --navy-dark: #0C447C; --ink: #1a2330; --muted: #5b6572;
+    --line: #e5e7eb; --bg: #f6f7f9; --card: #ffffff; --chip: #eef2f6;
+    --green: #0F6E56; --green-bg: #E1F5EE; --radius: 12px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--ink); line-height: 1.65; background: var(--card); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  h1 { font-size: clamp(28px, 4.5vw, 42px); line-height: 1.15; font-weight: 650; letter-spacing: -0.5px; }
+  h2 { font-size: 26px; font-weight: 600; letter-spacing: -0.3px; }
+  h3 { font-size: 16px; font-weight: 600; }
+  p  { font-size: 15px; }
+  a  { color: var(--navy); text-decoration: none; }
+  section { padding: 56px 0; }
+  .lbl { color: var(--muted); font-size: 14px; margin: 6px 0 28px; }
+  .chip { display: inline-block; font-size: 12.5px; padding: 4px 12px; border-radius: 999px; background: var(--chip); color: var(--muted); }
+  .stamp { display: inline-block; font-size: 11px; letter-spacing: 0.2px; color: #8a93a0; border: 1px solid var(--line); border-radius: 999px; padding: 2px 9px; margin-bottom: 10px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .btn { display: inline-block; font-size: 14.5px; font-weight: 500; padding: 11px 20px; border-radius: 10px; border: 1px solid var(--line); color: var(--ink); }
+  .btn:hover { border-color: var(--navy); }
+  .btn-p { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .btn-p:hover { background: var(--navy-dark); }
+  header { position: sticky; top: 0; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); z-index: 50; }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .nav-links { display: flex; align-items: center; gap: 22px; font-size: 14px; }
+  .nav-links a { color: var(--muted); }
+  .nav-links a:hover { color: var(--ink); }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--ink); }
+  .logo-mark { width: 32px; height: 32px; border-radius: 8px; background: var(--navy); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; }
+  .avail { font-size: 12px; padding: 4px 12px; border-radius: 999px; background: var(--green-bg); color: var(--green); font-weight: 500; }
+  .hero { display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: center; padding: 64px 0 56px; }
+  .hero .sub { color: var(--muted); font-size: 16.5px; margin: 14px 0 24px; max-width: 46ch; }
+  .mock { border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; background: var(--card); box-shadow: 0 8px 30px rgba(16,42,67,0.07); }
+  .mock-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; }
+  .kpis { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+  .kpi { background: var(--bg); border-radius: 8px; padding: 8px 10px; }
+  .kpi b { display: block; font-size: 18px; font-weight: 600; }
+  .kpi span { font-size: 11px; color: var(--muted); }
+  .bars { display: flex; align-items: flex-end; gap: 7px; height: 88px; }
+  .bars div { flex: 1; border-radius: 3px 3px 0 0; background: #B5D4F4; }
+  .trust { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 16px 0; font-size: 13.5px; color: var(--muted); }
+  .alt { background: var(--bg); }
+  .svc h3 { margin: 4px 0 6px; }
+  .svc p { font-size: 13.5px; color: var(--muted); }
+  .svc .ic { width: 34px; height: 34px; border-radius: 8px; background: #E6F1FB; color: var(--navy-dark); display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 600; }
+  .work h3 { margin: 2px 0 6px; }
+  .work p { font-size: 13.5px; color: var(--muted); }
+  .tags { margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+  .metric { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; }
+  .metric b { display: block; font-size: 26px; font-weight: 650; margin-top: 2px; }
+  .metric span { font-size: 13px; color: var(--muted); }
+  .tl { border-left: 2px solid var(--line); margin-left: 6px; padding-left: 24px; display: flex; flex-direction: column; gap: 26px; }
+  .tl-item { position: relative; }
+  .tl-item::before { content: ""; position: absolute; left: -31px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--navy); border: 2.5px solid #fff; box-shadow: 0 0 0 1.5px var(--navy); }
+  .tl-item .when { font-size: 12.5px; color: var(--muted); }
+  .tl-item h3 { font-size: 15.5px; margin: 2px 0; }
+  .tl-item .co { font-size: 13.5px; color: var(--navy-dark); font-weight: 500; }
+  .tl-item p { font-size: 13.5px; color: var(--muted); margin-top: 4px; max-width: 62ch; }
+  .quote { border-left: 3px solid var(--navy); padding: 4px 0 4px 18px; margin-top: 28px; }
+  .quote p { font-size: 15px; font-style: italic; color: var(--ink); }
+  .quote span { font-size: 13px; color: var(--muted); }
+  .contact { text-align: center; padding: 72px 0; }
+  .contact .btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
+  footer { border-top: 1px solid var(--line); padding: 22px 0; font-size: 12.5px; color: var(--muted); }
+  @media (max-width: 800px) { .hero { grid-template-columns: 1fr; } .nav-links .hide-m { display: none; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo"><span class="logo-mark">KH</span> Kareem Hesham</div>
+    <nav class="nav-links">
+      <a class="hide-m" href="#work">Work</a>
+      <a class="hide-m" href="#services">Services</a>
+      <a class="hide-m" href="#about">About</a>
+      <a class="hide-m" href="#contact">Contact</a>
+      <span class="avail">● Available</span>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap hero">
+  <div>
+    <span class="chip">Freelance &amp; fractional finance</span>
+    <h1>Finance that turns data into decisions.</h1>
+    <p class="sub">Accounting &amp; FP&amp;A specialist — IFRS close, multi-entity consolidation, and the Power BI &amp; automation layer that makes finance fast.</p>
+    <p style="margin-bottom: 26px;">
+      <a class="btn btn-p" href="#contact">Start a project →</a>&nbsp;
+      <a class="btn" href="#work">View work</a>
+    </p>
+    <span class="chip">IMA CMA Scholar</span>
+    <span class="chip">DEBI business analytics</span>
+    <span class="chip">Power BI · Python · SQL</span>
+  </div>
+  <div class="mock" aria-hidden="true">
+    <div class="mock-head">
+      <b style="font-size:13.5px;">CFO performance pack</b>
+      <span style="font-size:11px;color:#8a93a0;">sample · illustrative data</span>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><span>Close</span><b>T+5</b></div>
+      <div class="kpi"><span>Variance</span><b>-3.2%</b></div>
+      <div class="kpi"><span>DSO</span><b>54d</b></div>
+    </div>
+    <div class="bars">
+      <div style="height:45%"></div><div style="height:62%"></div><div style="height:38%"></div>
+      <div style="height:78%;background:#378ADD"></div><div style="height:55%"></div><div style="height:90%;background:#185FA5"></div>
+    </div>
+  </div>
+</div>
+
+<div class="trust"><div class="wrap">Experience across &nbsp;<b style="color:var(--ink);font-weight:500;">Cushman &amp; Wakefield · Assembly (Stagwell) · PepsiCo · Vodafone</b></div></div>
+
+<section id="services">
+  <div class="wrap">
+    <h2>Services</h2>
+    <p class="lbl">Full-cycle finance — from the ledger to the board pack, and the automation on top.</p>
+    <div class="grid">
+      <div class="card svc"><div class="ic">≈</div><h3>FP&amp;A &amp; financial modeling</h3><p>Driver-based models, budgets, rolling forecasts, scenario analysis, cash flow forecasting.</p></div>
+      <div class="card svc"><div class="ic">¶</div><h3>IFRS &amp; statutory close</h3><p>Multi-entity consolidation, audit-ready reporting, statutory close end-to-end.</p></div>
+      <div class="card svc"><div class="ic">⇄</div><h3>SOX &amp; balance sheet reconciliation</h3><p>Reconciliation frameworks by account class, intercompany, controls and substantiation.</p></div>
+      <div class="card svc"><div class="ic">◷</div><h3>Month-end close cadence</h3><p>Close calendars, ownership matrices, faster T+X close with cleaner controls.</p></div>
+      <div class="card svc"><div class="ic">▥</div><h3>Power BI dashboards</h3><p>CFO packs, KPI &amp; working-capital reporting, AR ageing, service-line profitability.</p></div>
+      <div class="card svc"><div class="ic">⚡</div><h3>Excel &amp; Power Query automation</h3><p>Kill manual reporting — rules-driven engines with one-click refresh.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="alt">
+  <div class="wrap">
+    <h2>Selected work</h2>
+    <p class="lbl">Every piece below is rebuilt with illustrative data — real client and employer work stays confidential.</p>
+    <div class="grid">
+      <div class="card work">
+        <span class="stamp">sample · illustrative data</span>
+        <h3>Multi-scenario FP&amp;A master dashboard</h3>
+        <p>Budget, reforecast and actuals side by side with automatic actuals/forecast blending, versioned baselines, and locked-budget governance.</p>
+        <div class="tags"><span class="chip">ACT / BUD / RFC</span><span class="chip">Power BI</span></div>
+      </div>
+      <div class="card work">
+        <span class="stamp">sample · illustrative data</span>
+        <h3>Direct-method cash flow forecast engine</h3>
+        <p>Power Query engine with a thin DAX layer: AR runoff by ageing bucket and collection profile, TB classification, P&amp;L-to-cash conversion, assumptions externalized to a rules workbook.</p>
+        <div class="tags"><span class="chip">Power Query M</span><span class="chip">DAX</span></div>
+      </div>
+      <div class="card work">
+        <span class="stamp">sample · illustrative data</span>
+        <h3>AR ageing &amp; collections dashboard</h3>
+        <p>Ageing buckets, department collection profiles, exception overrides and working-capital KPIs in one refresh.</p>
+        <div class="tags"><span class="chip">DSO</span><span class="chip">Collections</span></div>
+      </div>
+      <div class="card work">
+        <span class="stamp">framework · generic rebuild</span>
+        <h3>Balance sheet reconciliation suite</h3>
+        <p>Template library by account class — AR, AP, accruals, prepayments, fixed assets, equity — with SOX-aligned analysis classes and automated summary reporting.</p>
+        <div class="tags"><span class="chip">SOX-aligned</span><span class="chip">Excel VBA</span></div>
+      </div>
+      <div class="card work">
+        <span class="stamp">framework · generic rebuild</span>
+        <h3>Month-end close calendar</h3>
+        <p>T+5 close cadence: task-level calendar, ownership matrix, dependencies, and daily checkpoints across entities.</p>
+        <div class="tags"><span class="chip">MEC</span><span class="chip">T+5</span></div>
+      </div>
+      <div class="card work">
+        <span class="stamp">framework · generic rebuild</span>
+        <h3>Finance process mapping</h3>
+        <p>O2C and P2P process maps — billing integrity, approval flows, and control points designed for audit readiness.</p>
+        <div class="tags"><span class="chip">O2C / P2P</span><span class="chip">Controls</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>The future of finance</h2>
+    <p class="lbl">Finance is being rebuilt around automation and AI. I build the layer that lets teams close faster, report cleaner, and decide quicker.</p>
+    <div class="metrics">
+      <div class="metric"><span>Month-end close</span><b>T+5</b></div>
+      <div class="metric"><span>Tax filings, 3 jurisdictions</span><b>0 penalties</b></div>
+      <div class="metric"><span>Reporting automated</span><b>5 plants · 34 DCs</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="alt">
+  <div class="wrap">
+    <h2>Get to know me</h2>
+    <p class="lbl" style="max-width:70ch;">Finance professional with 6+ years across commercial real estate, media, FMCG and telecom — combining controllership (IFRS statutory close, consolidation, tax across Egypt, UAE &amp; KSA) with FP&amp;A and the BI layer on top. Based in New Cairo, Egypt · working with clients worldwide.</p>
+    <div class="tl">
+      <div class="tl-item">
+        <span class="when">Dec 2025 — Present</span>
+        <h3>Finance Lead — Egypt &amp; GCC</h3>
+        <span class="co">Cushman &amp; Wakefield | Core</span>
+        <p>In-country finance lead across three GCC subsidiaries — statutory close to a clean audit opinion, ERP migration, intercompany and transfer pricing, and the FP&amp;A + Power BI infrastructure adopted as the regional reporting standard.</p>
+      </div>
+      <div class="tl-item">
+        <span class="when">Dec 2023 — Dec 2025</span>
+        <h3>Senior Financial Accountant → Revenue Manager — MENA</h3>
+        <span class="co">Assembly Global | Stagwell Group</span>
+        <p>Monthly consolidation on OneStream across three entities and two currencies; multi-market accounting and revenue management; VAT, WHT and income tax across three jurisdictions with zero penalties.</p>
+      </div>
+      <div class="tl-item">
+        <span class="when">Dec 2022 — Dec 2023</span>
+        <h3>Supply Chain Finance Analyst</h3>
+        <span class="co">PepsiCo Egypt &amp; PepsiCo Baqshan</span>
+        <p>Automated inventory ageing and expiry-risk reporting across five plants and 34 distribution centres — recognized with the PepsiCo Way award.</p>
+      </div>
+      <div class="tl-item">
+        <span class="when">Jan 2021 — Dec 2022</span>
+        <h3>General Ledger → Commercial (Revenue) Accountant</h3>
+        <span class="co">Vodafone</span>
+        <p>IFRS 16 lease automation with Power Query; GL operations, reconciliations, and revenue accounting for content services.</p>
+      </div>
+    </div>
+    <div style="margin-top: 28px;">
+      <span class="chip">B.Com Finance — Cairo University</span>
+      <span class="chip">Business Analytics &amp; ERP Diploma — DEBI</span>
+      <span class="chip">IMA CMA Scholarship Awardee</span>
+    </div>
+    <div class="quote">
+      <p>“Kareem was always proactive and reliable. He consistently looked for ways to streamline and automate data processes… I have no doubt he'll be a great asset in his next role.”</p>
+      <span>— Claire Elliott, Associate Finance Director (direct manager)</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Let's build your finance engine</h2>
+    <p class="lbl" style="margin-bottom:0;">Dashboards, models, close support, automation — tell me what's slowing your finance team down.</p>
+    <div class="btns">
+      <a class="btn btn-p" href="mailto:Karim.Hisham.Elshafei@gmail.com">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/kareemhisham" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+    <span>© 2026 Kareem Hesham · New Cairo, Egypt</span>
+    <span>All showcased work is rebuilt with illustrative data. No client or employer data is published.</span>
+  </div>
+</footer>
+
+</body>
+</html>
