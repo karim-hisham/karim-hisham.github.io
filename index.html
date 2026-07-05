@@ -150,6 +150,24 @@
   .rl-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 16px; align-items: start; }
   .slicer { font-size: 11.5px; padding: 4px 12px; border: 1px solid var(--line); border-radius: 8px; color: #47505c; background: var(--bg); font-weight: 550; }
   .export { font-size: 11px; font-weight: 700; color: #217346; background: #E7F2EC; border: 1px solid #cfe5d8; border-radius: 8px; padding: 4px 12px; }
+  /* SERVICE TIERS */
+  details.tier { border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); margin: 14px 0; overflow: hidden; }
+  details.tier summary { list-style: none; cursor: pointer; padding: 18px 22px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+  details.tier summary::-webkit-details-marker { display: none; }
+  details.tier summary:hover { background: var(--bg); }
+  .tier-badge { font-size: 10.5px; font-weight: 800; letter-spacing: 1px; padding: 4px 12px; border-radius: 999px; flex-shrink: 0; }
+  .tb-a { background: #E7F2EC; color: #217346; } .tb-b { background: #E6F1FB; color: #1B66C9; } .tb-c { background: #EFEAFB; color: #5B3FB5; }
+  details.tier summary h3 { font-size: 17px; }
+  details.tier summary .sum-sub { font-size: 12.5px; color: var(--muted); flex-basis: 100%; margin-top: -6px; }
+  details.tier summary .chev { margin-left: auto; transition: transform .25s ease; color: var(--muted); font-size: 17px; }
+  details.tier[open] summary .chev { transform: rotate(90deg); }
+  .tier-body { padding: 4px 22px 24px; }
+  .c-done { color: var(--green); font-weight: 800; } .c-now { color: var(--amber); font-weight: 800; } .c-next { color: #c3cad3; font-weight: 700; }
+  .xls td.c-done, .xls td.c-now, .xls td.c-next { text-align: center; }
+  .phases { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; padding: 10px 12px 8px; border-top: 1px dashed var(--line); }
+  .phases b { font-size: 9px; letter-spacing: 0.8px; color: var(--navy-deep); flex-basis: 100%; }
+  .phases span { font-size: 9.5px; font-weight: 650; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 3px 8px; color: #47505c; }
+  .phases em { color: #c3cad3; font-style: normal; font-size: 11px; }
   /* SHOWROOM INTERACTIVE CONTROLS */
   .demo-strip { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 0 0 20px; font-size: 13px; color: var(--muted); }
   .demo-strip .pulse-tag { font-size: 11px; font-weight: 800; letter-spacing: 0.8px; padding: 4px 12px; border-radius: 999px; background: var(--navy-deep); color: #7DD3FC; }
@@ -347,11 +365,200 @@
   <div class="wrap">
     <span class="kicker reveal">The Executive Suite</span>
     <h2 class="reveal">A complete finance operating system — module by module.</h2>
-    <p class="lbl reveal">Fixed-scope. Deploy-ready. Every module below is a system I have designed, built and run in production inside multinationals — rebuilt here with illustrative data. If your monthly review still runs on memory and heroics, this is the upgrade.</p>
+    <p class="lbl reveal">One practice, three grades of service — <b style="color:var(--ink);">Controller-grade</b> close and control, <b style="color:var(--ink);">CFO-grade</b> planning and performance, and <b style="color:var(--ink);">Governance-grade</b> board and investor reporting. Every module is a system I designed, built and ran in production inside multinationals — rebuilt here with illustrative data. Expand a tier; take what your review is missing.</p>
 
-    <div class="group-h reveal">Report &amp; decide</div>
-    <div class="grid">
-      <div class="card reveal">
+    <details class="tier reveal" open>
+      <summary>
+        <span class="tier-badge tb-a">TIER 1 · CONTROLLER-GRADE</span>
+        <h3>Close &amp; control</h3>
+        <span class="chev">➔</span>
+        <span class="sum-sub">CPA-standard: close orchestration, balance sheet substantiation, consolidation, intercompany, statutory &amp; group filings, calculation engines — six modules and an interactive workbook.</span>
+      </summary>
+      <div class="tier-body">
+      <div class="grid">
+      <div class="card">
+        <span class="badge-deploy">✓ DEPLOY-READY</span>
+        <h3>Financial close orchestrator</h3>
+        <p class="hook">A three-day close that runs itself — and reminds the laggards.</p>
+        <div class="ba">
+          <div class="b"><span class="tag">BEFORE</span>Close tasks tracked in memory and group chat; the accrual gets forgotten every other month.</div>
+          <div class="a"><span class="tag">AFTER</span>A task-level close calendar with owners, dependencies and a ledger-lock sequence — month-end on rails, quarter-end layered on top.</div>
+        </div>
+        <div class="snap" aria-hidden="true">
+          <div class="xls-head" style="background:var(--navy-deep);">Close calendar — month-end <i>T+3 cadence · auto-reminders</i></div>
+          <div class="xls"><table>
+            <tr><th>Workstream</th><th>D−2</th><th>D−1</th><th>D1</th><th>D2</th><th>D3</th></tr>
+            <tr><td>Subledger locks — AP · billing</td><td class="c-done">✓</td><td class="c-done">✓</td><td></td><td></td><td></td></tr>
+            <tr><td>Accruals &amp; provisions</td><td></td><td class="c-done">✓</td><td class="c-done">✓</td><td></td><td></td></tr>
+            <tr><td>Intercompany &amp; recharges</td><td></td><td></td><td class="c-done">✓</td><td class="c-now">●</td><td></td></tr>
+            <tr><td>Trial balance review</td><td></td><td></td><td></td><td class="c-now">●</td><td class="c-next">○</td></tr>
+            <tr><td>Group submission — ledger lock</td><td></td><td></td><td></td><td></td><td class="c-next">○</td></tr>
+          </table></div>
+          <div class="phases"><b>QUARTER-END LAYER</b><span>Soft close</span><em>→</em><span>Interco confirmations</span><em>→</em><span>Netting</span><em>→</em><span>Provisions &amp; ECL</span><em>→</em><span>TB pre-submission</span><em>→</em><span>Group pack</span><em>→</em><span>Flux review</span></div>
+          <div class="snap-cap">✓ done · ● in progress · ○ scheduled — reminders auto-sent to task owners · full month-by-role matrix in the showroom below</div>
+        </div>
+        <span class="tool t-xl">EXCEL</span><span class="tool t-ol">OUTLOOK</span>
+      </div>
+
+      <div class="card">
+        <span class="badge-deploy">✓ DEPLOY-READY</span>
+        <h3>Balance sheet assurance</h3>
+        <p class="hook">Every balance substantiated. Every exception owned. Audit, welcomed.</p>
+        <div class="ba">
+          <div class="b"><span class="tag">BEFORE</span>Reconciliations in inconsistent formats; findings buried in tabs nobody reopens.</div>
+          <div class="a"><span class="tag">AFTER</span>A substantiation template per account class with SOX-aligned analysis states and an automated exceptions report to the controller.</div>
+        </div>
+        <div class="snap" aria-hidden="true">
+          <div class="xls-head">Substantiation — period close <i>auto-exceptions ✓</i></div>
+          <div class="xls"><table>
+            <tr><th>Account class</th><th>GL</th><th>Support</th><th>Δ</th><th>State</th></tr>
+            <tr><td>Trade receivables</td><td>4,120,300</td><td>4,120,300</td><td>0</td><td><span class="stat s-ok">SUBSTANTIATED</span></td></tr>
+            <tr><td>Accrued liabilities</td><td>812,450</td><td>798,210</td><td>14,240</td><td><span class="stat s-due">EXCEPTION</span></td></tr>
+          </table></div>
+          <div class="snap-cap">template library covers ten account classes — receivables, payables, accruals, prepayments, fixed assets, intangibles, leases, equity and more. Open the workbook below.</div>
+        </div>
+        <span class="tool t-xl">EXCEL</span><span class="tool t-vba">VBA</span>
+      </div>
+
+      <div class="card">
+        <span class="badge-deploy">✓ DEPLOY-READY</span>
+        <h3>Consolidation workbench</h3>
+        <p class="hook">Many entities. Many currencies. One clean group view.</p>
+        <div class="ba">
+          <div class="b"><span class="tag">BEFORE</span>Group reporting means three weeks of copy-paste and a prayer over eliminations.</div>
+          <div class="a"><span class="tag">AFTER</span>Entity trial balances flow through mapping, currency translation and elimination logic in Power Query — group statements assemble themselves.</div>
+        </div>
+        <div class="snap" aria-hidden="true">
+          <div class="flowsnap"><span>Entity A</span><span>Entity B</span><span>Entity C</span><em>→</em><span class="ctrl">Map &amp; translate</span><em>→</em><span class="ctrl">Eliminate interco</span><em>→</em><span>Group TB</span></div>
+          <div class="snap-cap">multi-entity consolidation flow · Excel + Power Query</div>
+        </div>
+        <span class="tool t-pq">POWER QUERY</span><span class="tool t-xl">EXCEL</span><span class="tool t-os">CPM READY</span>
+      </div>
+
+      <div class="card">
+        <span class="badge-deploy">✓ DEPLOY-READY</span>
+        <h3>Intercompany &amp; netting desk</h3>
+        <p class="hook">Cross-charges billed, matched and settled — before they become disputes.</p>
+        <div class="ba">
+          <div class="b"><span class="tag">BEFORE</span>Intercompany balances drift for quarters; settlement is an archaeology project.</div>
+          <div class="a"><span class="tag">AFTER</span>An arrangement register, monthly cross-charge billing discipline, and quarter-end netting cycles that clear positions in one exercise.</div>
+        </div>
+        <div class="snap" aria-hidden="true">
+          <div class="formsnap">
+            <div class="fr"><span>Arrangement register — service &amp; cost-plus</span><span class="stat s-ok">CURRENT</span></div>
+            <div class="fr"><span>Monthly cross-charges — billed out</span><span class="stat s-ok">DONE</span></div>
+            <div class="fr"><span>Quarter-end netting — positions cleared</span><span class="stat s-ok">SETTLED</span></div>
+            <div class="fr"><span>Mismatch follow-ups</span><span class="stat s-due">2 OPEN</span></div>
+          </div>
+          <div class="snap-cap">governance concept · illustrative</div>
+        </div>
+        <span class="chip">Transfer pricing aligned</span><span class="chip">FX &amp; WHT treated</span>
+      </div>
+
+      <div class="card">
+        <span class="badge-deploy">✓ DEPLOY-READY</span>
+        <h3>Statutory, tax &amp; group filings</h3>
+        <p class="hook">From one entity to an MNC group: three jurisdictions, two years, zero penalties.</p>
+        <div class="ba">
+          <div class="b"><span class="tag">BEFORE</span>Deadlines on sticky notes; every filing and every group pack rebuilt from scratch under pressure.</div>
+          <div class="a"><span class="tag">AFTER</span>One filing calendar spanning group reporting, statutory accounts and tax — prepared forms per jurisdiction, reviewed, filed, archived, audit-tracked.</div>
+        </div>
+        <div class="snap" aria-hidden="true">
+          <div class="formsnap">
+            <div class="fr"><span>Group reporting pack — quarterly consolidation</span><span class="stat s-ok">SUBMITTED</span></div>
+            <div class="fr"><span>Statutory financial statements — annual, per entity</span><span class="stat s-ok">AUDIT-SIGNED</span></div>
+            <div class="fr"><span>Corporate income tax — annual</span><span class="stat s-ok">FILED</span></div>
+            <div class="fr"><span>Indirect &amp; withholding tax — monthly / quarterly</span><span class="stat s-ok">FILED</span></div>
+            <div class="fr"><span>Transfer pricing local file</span><span class="stat s-ok">CURRENT</span></div>
+            <div class="fr"><span>Audit deliverables tracker (PBC)</span><span class="stat s-due">92%</span></div>
+          </div>
+          <div class="snap-cap">MNC-grade filing calendar — group + statutory + tax, per entity, per jurisdiction</div>
+        </div>
+        <span class="tool t-xl">EXCEL</span><span class="chip">Multi-jurisdiction</span>
+      </div>
+
+      <div class="card">
+        <span class="badge-deploy">✓ DEPLOY-READY</span>
+        <h3>Calculation engines</h3>
+        <p class="hook">Payroll taxes, bonuses, allocations — parameterized, auditable, reusable.</p>
+        <div class="ba">
+          <div class="b"><span class="tag">BEFORE</span>Sensitive calculations live in fragile one-off sheets that break when rates change.</div>
+          <div class="a"><span class="tag">AFTER</span>Governed calculators with parameter tables — update the rate card, every result recomputes. Payroll tax bands, social contributions, bonus schemes, allocation waves.</div>
+        </div>
+        <div class="snap" aria-hidden="true">
+          <div class="formsnap">
+            <div class="fr"><span>Gross salary</span><b>48,000</b></div>
+            <div class="fr"><span>Social contributions — rate table</span><b>(5,280)</b></div>
+            <div class="fr"><span>Progressive tax — band engine</span><b>(9,140)</b></div>
+            <div class="fr"><span><b>Net pay</b></span><b class="pos">33,580</b></div>
+          </div>
+          <div class="snap-cap">parameterized calculator concept · illustrative</div>
+        </div>
+        <span class="tool t-xl">EXCEL</span><span class="tool t-vba">VBA</span>
+      </div>
+      </div>
+
+      <div class="card" style="margin-top:16px;padding:0;overflow:hidden;">
+        <div class="xls-head" style="font-size:12.5px;">Substantiation workbook — interactive preview <i>generic rebuild · illustrative data</i></div>
+        <div class="xls-tabs" id="wbTabs" style="padding-top:6px;">
+          <span class="off" data-t="wb1">Methodology</span>
+          <span class="off" data-t="wb2">Exceptions summary</span>
+          <span data-t="wb3">Receivables substantiation</span>
+        </div>
+        <div class="wb-pane" id="wb1">
+          <div style="padding:14px 16px;font-size:12.5px;color:#47505c;">
+            <p style="font-size:12.5px;margin-bottom:8px;"><b>Analysis states</b> — every reconciling item is classified:</p>
+            <p style="font-size:12.5px;"><span class="stat s-ok">SUBSTANTIATED</span> supported, zero difference &nbsp; <span class="stat s-due">EXCEPTION</span> difference identified — owner and due date assigned &nbsp; <span class="stat" style="background:#eef2f6;color:#5b6572;">UNRESOLVED</span> escalates with age</p>
+            <p style="font-size:12.5px;margin:12px 0 6px;"><b>Review cadence by materiality</b></p>
+            <div class="xls"><table>
+              <tr><th>Balance</th><th>Frequency</th></tr>
+              <tr><td>High materiality</td><td>Monthly</td></tr>
+              <tr><td>Medium</td><td>Quarterly</td></tr>
+              <tr><td>Low</td><td>Semi-annual</td></tr>
+            </table></div>
+            <p style="font-size:12.5px;margin:12px 0 6px;"><b>Sign-off chain</b></p>
+            <div class="flowsnap" style="padding:2px 0 6px;"><span>Preparer</span><em>→</em><span class="ctrl">Reviewer</span><em>→</em><span class="ctrl">Approver</span><em>→</em><span>Archive</span></div>
+          </div>
+        </div>
+        <div class="wb-pane" id="wb2">
+          <div class="xls"><table>
+            <tr><th>Account class</th><th>Δ</th><th>State</th></tr>
+            <tr><td>Trade receivables</td><td>0</td><td><span class="stat s-ok">SUBSTANTIATED</span></td></tr>
+            <tr><td>Trade payables</td><td>0</td><td><span class="stat s-ok">SUBSTANTIATED</span></td></tr>
+            <tr><td>Accrued liabilities</td><td>14,240</td><td><span class="stat s-due">EXCEPTION</span></td></tr>
+            <tr><td>Prepayments</td><td>0</td><td><span class="stat s-ok">SUBSTANTIATED</span></td></tr>
+            <tr><td>Fixed assets</td><td>0</td><td><span class="stat s-ok">SUBSTANTIATED</span></td></tr>
+            <tr><td><b>Exceptions to controller</b></td><td><b>1 · 14,240</b></td><td><span class="stat s-due">AUTO-REPORT</span></td></tr>
+          </table></div>
+        </div>
+        <div class="wb-pane on" id="wb3">
+          <div style="padding:10px 16px 0;font-size:11.5px;color:var(--muted);">Control account <b style="color:var(--ink);">1010-XXXX — Trade receivables</b> · Entity A · Period close</div>
+          <div class="xls" style="padding:8px 0 0;"><table>
+            <tr><th>Line</th><th>Amount</th></tr>
+            <tr><td>General ledger balance</td><td>4,120,300</td></tr>
+            <tr><td>Open invoices — current</td><td>3,385,300</td></tr>
+            <tr><td>Open invoices — 31–90d</td><td>640,000</td></tr>
+            <tr><td>Open invoices — 90+ (legal)</td><td>95,000</td></tr>
+            <tr><td><b>Supporting detail total</b></td><td><b>4,120,300</b></td></tr>
+            <tr><td>Difference</td><td><b>0</b> &nbsp;<span class="stat s-ok">SUBSTANTIATED</span></td></tr>
+          </table></div>
+          <div style="padding:10px 16px;font-size:12px;color:#47505c;"><b>Commentary:</b> Balance supported by open-invoice listing; 90+ exposure under legal follow-up, provision assessed under expected-credit-loss policy.</div>
+          <div style="padding:0 16px 14px;font-size:11.5px;color:var(--muted);">Preparer <span class="ok">✓</span> · Reviewer <span class="stat s-due">PENDING</span> · Approver ○</div>
+        </div>
+      </div>
+      </div>
+    </details>
+
+    <details class="tier reveal">
+      <summary>
+        <span class="tier-badge tb-b">TIER 2 · CFO-GRADE</span>
+        <h3>Plan, perform &amp; decide</h3>
+        <span class="chev">➔</span>
+        <span class="sum-sub">FP&amp;A to the AFP standard: executive performance pack, working capital command, direct-method liquidity, risk &amp; resilience analytics — four modules, all test-drivable in the showroom.</span>
+      </summary>
+      <div class="tier-body">
+      <div class="grid">
+      <div class="card">
         <span class="badge-deploy">✓ DEPLOY-READY</span>
         <h3>Board performance suite</h3>
         <p class="hook">Your board reads it in nine minutes. Then they decide.</p>
@@ -373,7 +580,7 @@
         <p style="margin-top:10px;"><a href="#platform" style="font-size:12.5px;font-weight:650;">Test-drive it in the showroom ↓</a></p>
       </div>
 
-      <div class="card reveal">
+      <div class="card">
         <span class="badge-deploy">✓ DEPLOY-READY</span>
         <h3>Working capital command center</h3>
         <p class="hook">Cash is a decision. Make it daily — on both sides of the ledger.</p>
@@ -394,7 +601,7 @@
         <p style="margin-top:10px;"><a href="#platform" style="font-size:12.5px;font-weight:650;">Test-drive it in the showroom ↓</a></p>
       </div>
 
-      <div class="card reveal">
+      <div class="card">
         <span class="badge-deploy">✓ DEPLOY-READY</span>
         <h3>Liquidity &amp; cash command</h3>
         <p class="hook">Thirteen weeks of visibility. Zero heroics.</p>
@@ -415,128 +622,8 @@
         <span class="tool t-pq">POWER QUERY</span><span class="tool t-dax">DAX</span><span class="tool t-xl">EXCEL</span>
         <p style="margin-top:10px;"><a href="#platform" style="font-size:12.5px;font-weight:650;">Test-drive it in the showroom ↓</a></p>
       </div>
-    </div>
 
-    <div class="group-h reveal">Close &amp; control</div>
-    <div class="grid">
-      <div class="card reveal">
-        <span class="badge-deploy">✓ DEPLOY-READY</span>
-        <h3>Financial close orchestrator</h3>
-        <p class="hook">A three-day close that runs itself — and emails the laggards.</p>
-        <div class="ba">
-          <div class="b"><span class="tag">BEFORE</span>Close tasks tracked in memory and group chat; the accrual gets forgotten every other month.</div>
-          <div class="a"><span class="tag">AFTER</span>Task-level close calendar with owners, dependencies, ledger-lock sequence and automated reminders — pre-submission checks before the trial balance ever leaves.</div>
-        </div>
-        <div class="email" aria-hidden="true">
-          <div class="eh"><b>Close reminder — Day 2 of 3</b><span>To: entity controllers · auto-sent 08:00</span></div>
-          <div class="eb">
-            <div><span class="ok">✓</span> Subledgers closed — AP &amp; billing locked</div>
-            <div><span class="ok">✓</span> Payroll &amp; accruals posted</div>
-            <div><b style="color:var(--ink);">→ Intercompany charges billed out — due today</b></div>
-            <div>○ Trial balance pre-submission review — day 3</div>
-          </div>
-        </div>
-        <span class="tool t-xl">EXCEL</span><span class="tool t-ol">OUTLOOK</span>
-      </div>
-
-      <div class="card reveal">
-        <span class="badge-deploy">✓ DEPLOY-READY</span>
-        <h3>Balance sheet assurance</h3>
-        <p class="hook">Every balance substantiated. Every exception owned. Audit, welcomed.</p>
-        <div class="ba">
-          <div class="b"><span class="tag">BEFORE</span>Reconciliations in inconsistent formats; findings buried in tabs nobody reopens.</div>
-          <div class="a"><span class="tag">AFTER</span>A substantiation template per account class with SOX-aligned analysis states and an automated exceptions report to the controller.</div>
-        </div>
-        <div class="snap" aria-hidden="true">
-          <div class="xls-head">Substantiation — period close <i>auto-exceptions ✓</i></div>
-          <div class="xls"><table>
-            <tr><th>Account class</th><th>GL</th><th>Support</th><th>Δ</th><th>State</th></tr>
-            <tr><td>Trade receivables</td><td>4,120,300</td><td>4,120,300</td><td>0</td><td><span class="stat s-ok">SUBSTANTIATED</span></td></tr>
-            <tr><td>Accrued liabilities</td><td>812,450</td><td>798,210</td><td>14,240</td><td><span class="stat s-due">EXCEPTION</span></td></tr>
-          </table></div>
-          <div class="snap-cap">generic rebuild · illustrative data</div>
-        </div>
-        <span class="tool t-xl">EXCEL</span><span class="tool t-vba">VBA</span>
-      </div>
-
-      <div class="card reveal">
-        <span class="badge-deploy">✓ DEPLOY-READY</span>
-        <h3>Consolidation workbench</h3>
-        <p class="hook">Many entities. Many currencies. One clean group view.</p>
-        <div class="ba">
-          <div class="b"><span class="tag">BEFORE</span>Group reporting means three weeks of copy-paste and a prayer over eliminations.</div>
-          <div class="a"><span class="tag">AFTER</span>Entity trial balances flow through mapping, currency translation and elimination logic in Power Query — group statements assemble themselves.</div>
-        </div>
-        <div class="snap" aria-hidden="true">
-          <div class="flowsnap"><span>Entity A</span><span>Entity B</span><span>Entity C</span><em>→</em><span class="ctrl">Map &amp; translate</span><em>→</em><span class="ctrl">Eliminate interco</span><em>→</em><span>Group TB</span></div>
-          <div class="snap-cap">multi-entity consolidation flow · Excel + Power Query</div>
-        </div>
-        <span class="tool t-pq">POWER QUERY</span><span class="tool t-xl">EXCEL</span><span class="tool t-os">CPM READY</span>
-      </div>
-
-      <div class="card reveal">
-        <span class="badge-deploy">✓ DEPLOY-READY</span>
-        <h3>Intercompany &amp; netting desk</h3>
-        <p class="hook">Cross-charges billed, matched and settled — before they become disputes.</p>
-        <div class="ba">
-          <div class="b"><span class="tag">BEFORE</span>Intercompany balances drift for quarters; settlement is an archaeology project.</div>
-          <div class="a"><span class="tag">AFTER</span>An arrangement register, monthly cross-charge billing discipline, and quarter-end netting cycles that clear positions in one exercise.</div>
-        </div>
-        <div class="snap" aria-hidden="true">
-          <div class="formsnap">
-            <div class="fr"><span>Arrangement register — service &amp; cost-plus</span><span class="stat s-ok">CURRENT</span></div>
-            <div class="fr"><span>Monthly cross-charges — billed out</span><span class="stat s-ok">DONE</span></div>
-            <div class="fr"><span>Quarter-end netting — positions cleared</span><span class="stat s-ok">SETTLED</span></div>
-            <div class="fr"><span>Mismatch follow-ups</span><span class="stat s-due">2 OPEN</span></div>
-          </div>
-          <div class="snap-cap">governance concept · illustrative</div>
-        </div>
-        <span class="chip">Transfer pricing aligned</span><span class="chip">FX &amp; WHT treated</span>
-      </div>
-
-      <div class="card reveal">
-        <span class="badge-deploy">✓ DEPLOY-READY</span>
-        <h3>Statutory &amp; tax calendar</h3>
-        <p class="hook">Three jurisdictions. Two years. Zero penalties. That's the standard.</p>
-        <div class="ba">
-          <div class="b"><span class="tag">BEFORE</span>Deadlines on sticky notes; every filing rebuilt from scratch under pressure.</div>
-          <div class="a"><span class="tag">AFTER</span>A compliance calendar with prepared forms per jurisdiction — indirect tax, withholding, corporate income tax — reviewed, filed, archived.</div>
-        </div>
-        <div class="snap" aria-hidden="true">
-          <div class="formsnap">
-            <div class="fr"><span>Indirect tax return — monthly</span><span class="stat s-ok">FILED</span></div>
-            <div class="fr"><span>Withholding tax — quarterly</span><span class="stat s-ok">FILED</span></div>
-            <div class="fr"><span>Corporate income tax — annual</span><span class="stat s-due">IN PREP</span></div>
-          </div>
-          <div class="snap-cap">compliance calendar concept · illustrative</div>
-        </div>
-        <span class="tool t-xl">EXCEL</span><span class="chip">Multi-jurisdiction</span>
-      </div>
-
-      <div class="card reveal">
-        <span class="badge-deploy">✓ DEPLOY-READY</span>
-        <h3>Calculation engines</h3>
-        <p class="hook">Payroll taxes, bonuses, allocations — parameterized, auditable, reusable.</p>
-        <div class="ba">
-          <div class="b"><span class="tag">BEFORE</span>Sensitive calculations live in fragile one-off sheets that break when rates change.</div>
-          <div class="a"><span class="tag">AFTER</span>Governed calculators with parameter tables — update the rate card, every result recomputes. Payroll tax bands, social contributions, bonus schemes, allocation waves.</div>
-        </div>
-        <div class="snap" aria-hidden="true">
-          <div class="formsnap">
-            <div class="fr"><span>Gross salary</span><b>48,000</b></div>
-            <div class="fr"><span>Social contributions — rate table</span><b>(5,280)</b></div>
-            <div class="fr"><span>Progressive tax — band engine</span><b>(9,140)</b></div>
-            <div class="fr"><span><b>Net pay</b></span><b class="pos">33,580</b></div>
-          </div>
-          <div class="snap-cap">parameterized calculator concept · illustrative</div>
-        </div>
-        <span class="tool t-xl">EXCEL</span><span class="tool t-vba">VBA</span>
-      </div>
-    </div>
-
-    <div class="group-h reveal">Advise &amp; enable</div>
-    <div class="grid">
-      <div class="card reveal">
+      <div class="card">
         <span class="badge-deploy">✓ ADVISORY</span>
         <h3>Risk &amp; resilience analytics</h3>
         <p class="hook">Know your industry's failure modes before they know you.</p>
@@ -554,8 +641,61 @@
         </div>
         <span class="tool t-ai">AI-ASSISTED</span><span class="tool t-dax">PYTHON</span><span class="chip">Economic research</span>
       </div>
+      </div>
+      </div>
+    </details>
 
-      <div class="card reveal">
+    <details class="tier reveal">
+      <summary>
+        <span class="tier-badge tb-c">TIER 3 · GOVERNANCE-GRADE</span>
+        <h3>Board, shareholder &amp; investor</h3>
+        <span class="chev">➔</span>
+        <span class="sum-sub">Fiduciary-standard reporting: the standing board book, investor packs on governed KPI definitions, and enablement so the whole table reads the same numbers — three modules.</span>
+      </summary>
+      <div class="tier-body">
+      <div class="grid">
+      <div class="card">
+        <span class="badge-deploy">✓ DEPLOY-READY</span>
+        <h3>Board &amp; shareholder review pack</h3>
+        <p class="hook">The board book that compiles itself. Governance without the scramble.</p>
+        <div class="ba">
+          <div class="b"><span class="tag">BEFORE</span>Board packs assembled in all-nighters; last quarter's resolutions and actions quietly vanish.</div>
+          <div class="a"><span class="tag">AFTER</span>A standing board book — performance, liquidity, risk register, covenant status, resolutions &amp; actions tracker — versioned every cycle, minuted once.</div>
+        </div>
+        <div class="snap" aria-hidden="true">
+          <div class="formsnap">
+            <div class="fr"><span>Q2 board book — six sections</span><span class="stat s-ok">COMPILED</span></div>
+            <div class="fr"><span>Resolutions &amp; actions — 9 closed</span><span class="stat s-due">2 OPEN</span></div>
+            <div class="fr"><span>Covenant compliance — net debt / EBITDA 1.8× vs ≤ 3.0×</span><span class="stat s-ok">PASS</span></div>
+            <div class="fr"><span>Governance calendar — AGM · audit committee</span><span class="stat s-ok">ON TRACK</span></div>
+          </div>
+          <div class="snap-cap">BOD &amp; audit-committee ready · every action owned, every covenant evidenced</div>
+        </div>
+        <span class="tool t-pbi">POWER BI</span><span class="chip">BOD · Audit committee</span>
+      </div>
+
+      <div class="card">
+        <span class="badge-deploy">✓ DEPLOY-READY</span>
+        <h3>Investor reporting</h3>
+        <p class="hook">Numbers investors can wire money against.</p>
+        <div class="ba">
+          <div class="b"><span class="tag">BEFORE</span>Ad-hoc updates with shifting KPI definitions; credibility leaks a little every quarter.</div>
+          <div class="a"><span class="tag">AFTER</span>A monthly investor pack on governed KPI definitions — performance, cash runway, covenant certificates — the same number for every audience, every time.</div>
+        </div>
+        <div class="snap" aria-hidden="true">
+          <div class="xls"><table>
+            <tr><th>KPI — governed definition</th><th>Value</th><th>Signal</th></tr>
+            <tr><td>Revenue growth vs plan</td><td class="pos">+3.4%</td><td><span class="stat s-ok">AHEAD</span></td></tr>
+            <tr><td>EBITDA margin</td><td>44.4%</td><td><span class="stat s-ok">STABLE</span></td></tr>
+            <tr><td>Net debt / EBITDA</td><td>1.8×</td><td><span class="stat s-ok">WITHIN</span></td></tr>
+            <tr><td>Cash runway</td><td>13 weeks</td><td><span class="stat s-ok">✓</span></td></tr>
+          </table></div>
+          <div class="snap-cap">shareholder-ready · covenant certificates on request · illustrative data</div>
+        </div>
+        <span class="tool t-pbi">POWER BI</span><span class="chip">Shareholder-grade</span>
+      </div>
+
+      <div class="card">
         <span class="badge-deploy">✓ DEPLOY-READY</span>
         <h3>Finance academy</h3>
         <p class="hook">Budget owners who understand budgets. Imagine the review meetings.</p>
@@ -574,12 +714,14 @@
         <span class="chip">Workshops</span><span class="chip">Playbooks</span><span class="chip">Handover</span>
       </div>
 
-      <div class="card reveal" style="display:flex;flex-direction:column;justify-content:center;text-align:center;background:linear-gradient(160deg,#0A2A4E,#0C3560);border:none;">
+      <div class="card" style="display:flex;flex-direction:column;justify-content:center;text-align:center;background:linear-gradient(160deg,#0A2A4E,#0C3560);border:none;">
         <h3 style="color:#fff;">Something messier?</h3>
         <p style="font-size:13.5px;color:#A9BBD1;margin:8px 0 16px;">Custom builds start from the same architecture. Scoped in one call.</p>
         <div><a class="btn" href="#contact" style="background:#fff;border-color:#fff;">Tell me about it →</a></div>
       </div>
-    </div>
+      </div>
+      </div>
+    </details>
   </div>
 </section>
 
