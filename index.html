@@ -145,11 +145,88 @@
   .kpis5 .kpi { background: var(--bg); border-radius: 8px; padding: 8px 11px; }
   .kpis5 .kpi b { display: block; font-size: 17px; font-weight: 700; }
   .kpis5 .kpi span { font-size: 10.5px; color: var(--muted); }
-  .leg { font-size: 11px; color: var(--muted); display: inline-flex; gap: 14px; margin-top: 8px; }
+  .leg { font-size: 11px; color: var(--muted); display: inline-flex; gap: 14px; margin-top: 8px; flex-wrap: wrap; }
   .leg i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; margin-right: 5px; vertical-align: -1px; }
   .rl-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 16px; align-items: start; }
   .slicer { font-size: 11.5px; padding: 4px 12px; border: 1px solid var(--line); border-radius: 8px; color: #47505c; background: var(--bg); font-weight: 550; }
   .export { font-size: 11px; font-weight: 700; color: #217346; background: #E7F2EC; border: 1px solid #cfe5d8; border-radius: 8px; padding: 4px 12px; }
+  /* SHOWROOM INTERACTIVE CONTROLS */
+  .demo-strip { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 0 0 20px; font-size: 13px; color: var(--muted); }
+  .demo-strip .pulse-tag { font-size: 11px; font-weight: 800; letter-spacing: 0.8px; padding: 4px 12px; border-radius: 999px; background: var(--navy-deep); color: #7DD3FC; }
+  .tglgrp { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .tglgrp span { font-size: 11px; font-weight: 650; padding: 4px 12px; color: #7d8796; background: #f2f5f8; cursor: pointer; border-right: 1px solid var(--line); user-select: none; }
+  .tglgrp span:last-child { border-right: none; }
+  .tglgrp span.on { background: var(--navy-deep); color: #fff; }
+  .rag-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin: 0 0 12px; }
+  .rag-tiles .kpi { background: var(--bg); border-radius: 8px; padding: 8px 11px; text-align: center; }
+  .rag-tiles .kpi b { display: block; font-size: 18px; font-weight: 800; }
+  .rag-tiles .kpi span { font-size: 10px; color: var(--muted); letter-spacing: 0.3px; }
+  .rag-tiles .kpi.tile-ok { background: var(--green-bg); } .rag-tiles .kpi.tile-ok b { color: var(--green); }
+  .rno-bar { position: relative; height: 46px; margin: 14px 6px 6px; }
+  .rno-bar .axis { position: absolute; left: 0; right: 0; top: 22px; height: 2px; background: var(--line); }
+  .rno-bar .zero { position: absolute; top: 12px; bottom: 4px; width: 2px; background: #c3cad3; }
+  .rno-bar .seg { position: absolute; height: 10px; border-radius: 4px; top: 18px; }
+  .rno-bar .lab { position: absolute; font-size: 9.5px; color: var(--muted); top: 32px; white-space: nowrap; }
+  .trend { display: flex; align-items: flex-end; gap: 10px; height: 110px; padding: 12px 12px 4px; }
+  .trend .mgrp { flex: 1; display: flex; align-items: flex-end; gap: 2px; height: 100%; }
+  .trend .mgrp i { flex: 1; border-radius: 2px 2px 0 0; display: block; }
+  .trend-x { display: flex; gap: 10px; padding: 0 12px 10px; }
+  .trend-x span { flex: 1; text-align: center; font-size: 9.5px; color: var(--muted); }
+  .c-plan { background: #C3CDD9; } .c-rfc { background: #1B66C9; } .c-act { background: #0FB5A6; }
+  .wf { display: flex; align-items: flex-end; gap: 6px; height: 96px; padding: 12px 12px 4px; }
+  .wf .col { flex: 1; position: relative; height: 100%; }
+  .wf .col i { position: absolute; left: 0; right: 0; border-radius: 3px; }
+  .wf .up { background: #2FA57C; } .wf .down { background: #D96A5B; } .wf .base { background: var(--navy-deep); }
+  .wf-x { display: flex; gap: 6px; padding: 0 12px 8px; }
+  .wf-x span { flex: 1; text-align: center; font-size: 9px; color: var(--muted); }
+  .checklist { padding: 10px 12px; }
+  .checklist .fr b { font-weight: 650; color: var(--ink); }
+  .runsteps { padding: 10px 12px; font-size: 11.5px; color: #47505c; }
+  .runsteps div { display: flex; gap: 9px; padding: 4px 0; align-items: baseline; }
+  .runsteps em { font-style: normal; font-size: 9.5px; font-weight: 800; color: #fff; background: var(--navy); border-radius: 999px; min-width: 17px; height: 17px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .fte { display: flex; align-items: flex-end; gap: 4px; height: 84px; padding: 12px 12px 2px; }
+  .fte .col { flex: 1; display: flex; flex-direction: column-reverse; height: 100%; gap: 1px; }
+  .fte .col i { display: block; border-radius: 2px; }
+  .fte .pc { background: #1B66C9; } .fte .cc { background: #C3CDD9; }
+  /* SHOWROOM V2 — SCENARIO COLOR GRAMMAR & LIVE SIM */
+  :root { --scPY: #D6455B; --scACT: #232047; --scPLAN: #98A0AC; --scRFC: #12A5BC; }
+  .c-py { background: var(--scPY); } .c-plan { background: var(--scPLAN); }
+  .c-rfc { background: var(--scRFC); } .c-act { background: var(--scACT); }
+  .pill-kpis { display: flex; gap: 10px; flex-wrap: wrap; margin: 2px 0 12px; }
+  .pill { border: 1px solid var(--line); border-radius: 999px; padding: 7px 20px; background: var(--bg); text-align: center; min-width: 122px; }
+  .pill span { display: block; font-size: 10px; color: var(--muted); letter-spacing: 0.4px; }
+  .pill b { font-size: 18px; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .pill.p-green { background: #17805B; border-color: #17805B; }
+  .pill.p-green span { color: #CDEDE0; } .pill.p-green b { color: #fff; }
+  .pill.p-soft { background: #DFF5EC; border-color: #cfe5d8; }
+  .torn { padding: 6px 12px 2px; }
+  .torn .trow { display: flex; align-items: center; gap: 8px; padding: 3.5px 0; }
+  .torn .trow > span { width: 168px; font-size: 10.5px; color: var(--muted); flex-shrink: 0; }
+  .torn .lane { position: relative; flex: 1; height: 12px; }
+  .torn .lane em { position: absolute; top: -3px; bottom: -3px; left: 26%; width: 2px; background: #d4dae2; }
+  .torn .lane i { position: absolute; top: 0; height: 12px; border-radius: 3px; }
+  .torn .trow b { font-size: 10.5px; width: 48px; text-align: right; font-variant-numeric: tabular-nums; }
+  .rhythm-scroll { overflow-x: auto; }
+  .rgrid { display: grid; grid-template-columns: 104px repeat(8, minmax(102px, 1fr)); gap: 6px; min-width: 940px; padding: 12px 14px 6px; }
+  .rgrid .dh { font-size: 9.5px; font-weight: 800; letter-spacing: 0.5px; color: var(--navy-deep); text-align: center; background: var(--chip); border-radius: 6px; padding: 4px; align-self: stretch; }
+  .rgrid .role { font-size: 10px; font-weight: 800; color: var(--muted); align-self: center; letter-spacing: 0.4px; text-transform: uppercase; }
+  .rgrid .rc { font-size: 9.8px; line-height: 1.4; border: 1px solid var(--line); border-left: 3px solid var(--navy); background: #fff; border-radius: 6px; padding: 4px 7px; color: #3d4653; }
+  .rgrid .rc.ctl { border-left-color: var(--scPY); } .rgrid .rc.fin { border-left-color: var(--scRFC); }
+  .rgrid .rc.fpa { border-left-color: #1B66C9; } .rgrid .rc.tre { border-left-color: #8A6FD1; }
+  .rgrid .rc.lead { border-left-color: #0E7C5B; background: var(--green-bg); }
+  .role-leg { font-size: 10.5px; color: var(--muted); display: flex; gap: 14px; flex-wrap: wrap; padding: 4px 14px 12px; }
+  .role-leg i { width: 9px; height: 9px; border-radius: 2px; display: inline-block; margin-right: 5px; vertical-align: -1px; }
+  .simctl { display: inline-flex; align-items: center; gap: 8px; font-size: 11.5px; color: #47505c; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 5px 12px; }
+  .simctl b { font-variant-numeric: tabular-nums; min-width: 44px; text-align: right; }
+  .simrange { -webkit-appearance: none; appearance: none; width: 140px; height: 4px; border-radius: 4px; background: #dfe5ec; outline: none; vertical-align: middle; }
+  .simrange::-webkit-slider-thumb { -webkit-appearance: none; width: 15px; height: 15px; border-radius: 50%; background: var(--navy); cursor: pointer; border: 2.5px solid #fff; box-shadow: 0 0 0 1.5px var(--navy); }
+  .simrange::-moz-range-thumb { width: 13px; height: 13px; border-radius: 50%; background: var(--navy); border: 2.5px solid #fff; box-shadow: 0 0 0 1.5px var(--navy); cursor: pointer; }
+  .brk td.hit { background: #DFF5EC; font-weight: 800; color: var(--green); }
+  .mpc { display: flex; align-items: flex-end; gap: 4px; height: 96px; padding: 12px 12px 2px; }
+  .mpc .col { flex: 1; display: flex; flex-direction: column-reverse; height: 100%; gap: 1px; }
+  .mpc .col i { display: block; border-radius: 2px; }
+  .svgline { width: 100%; height: auto; display: block; padding: 6px 12px 0; }
+  .wf .tot { background: #14121F; }
   /* METHOD */
   .method { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
   .stage { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 20px 20px; }
@@ -198,7 +275,7 @@
     <div class="logo"><span class="logo-mark">KH</span><span>Kareem Hesham<small>THE FINANCE ENGINE</small></span></div>
     <nav class="nav-links">
       <a class="hide-m" href="#suite">Suite</a>
-      <a class="hide-m" href="#platform">Platform</a>
+      <a class="hide-m" href="#platform">Showroom</a>
       <a class="hide-m" href="#method">Method</a>
       <a class="hide-m" href="#future">2030</a>
       <a class="hide-m" href="#about">About</a>
@@ -215,7 +292,7 @@
       <h1>Board-grade finance, deployed in weeks. Not years.</h1>
       <p class="sub">I build the reporting, close and planning infrastructure multinationals run on — packaged as fixed-scope systems any company can deploy. Rigorous enough for your auditors. Readable by everyone at the table.</p>
       <p>
-        <a class="btn btn-p" href="#suite">Explore the suite →</a>&nbsp;
+        <a class="btn btn-p" href="#platform">Test-drive the dashboards →</a>&nbsp;
         <a class="btn btn-ghost" href="#contact">Book an intro call</a>
       </p>
       <div class="creds">
@@ -293,6 +370,7 @@
           <div class="snap-cap">executive review concept · illustrative data</div>
         </div>
         <span class="tool t-pbi">POWER BI</span><span class="tool t-pq">POWER QUERY</span><span class="tool t-dax">DAX</span>
+        <p style="margin-top:10px;"><a href="#platform" style="font-size:12.5px;font-weight:650;">Test-drive it in the showroom ↓</a></p>
       </div>
 
       <div class="card reveal">
@@ -313,6 +391,7 @@
           <div class="snap-cap">receivables + payables + provisions · illustrative data</div>
         </div>
         <span class="tool t-pbi">POWER BI</span><span class="tool t-ns">ERP FEEDS</span>
+        <p style="margin-top:10px;"><a href="#platform" style="font-size:12.5px;font-weight:650;">Test-drive it in the showroom ↓</a></p>
       </div>
 
       <div class="card reveal">
@@ -334,6 +413,7 @@
           <div class="snap-cap">one-click refresh · assumptions editable in Excel</div>
         </div>
         <span class="tool t-pq">POWER QUERY</span><span class="tool t-dax">DAX</span><span class="tool t-xl">EXCEL</span>
+        <p style="margin-top:10px;"><a href="#platform" style="font-size:12.5px;font-weight:650;">Test-drive it in the showroom ↓</a></p>
       </div>
     </div>
 
@@ -505,74 +585,253 @@
 
 <section id="platform">
   <div class="wrap">
-    <span class="kicker reveal">The platform, in evidence</span>
-    <h2 class="reveal">Production builds — replicated page for page.</h2>
-    <p class="lbl reveal">These are faithful replicas of systems I built and ran in production: same page architecture, same measure logic, illustrative numbers. Click through them. Then ask me for the live walkthrough.</p>
+    <span class="kicker reveal">The showroom · Take the operating system for a test drive</span>
+    <h2 class="reveal">One product. Many hands. This is how it runs each month.</h2>
+    <p class="lbl reveal">These aren't screenshots — they're faithful replicas of production systems: same page architecture, same measure logic, illustrative numbers. Controllership, business finance, FP&amp;A, treasury and leadership each play their bar, on a close calendar that conducts the whole month. Start with the rhythm below, then click through the instruments — switch tabs, flip time views, drag the simulators.</p>
+    <div class="demo-strip reveal">
+      <span class="pulse-tag">▶ INTERACTIVE</span>
+      <span>Tabs switch pages · toggles re-slice · sliders recompute live</span>
+      <span style="border-left:1px solid var(--line);padding-left:12px;"><b style="color:var(--ink);font-size:11px;">Scenario colour grammar:</b>&nbsp;
+        <i style="display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--scPY);vertical-align:-1px;"></i> prior-year actuals &nbsp;
+        <i style="display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--scPLAN);vertical-align:-1px;"></i> plan · locked &nbsp;
+        <i style="display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--scRFC);vertical-align:-1px;"></i> reforecast X+Y &nbsp;
+        <i style="display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--scACT);vertical-align:-1px;"></i> actuals</span>
+    </div>
 
+    <!-- ============ 0 · THE OPERATING RHYTHM ============ -->
     <div class="card reveal pbi" style="padding:0;overflow:hidden;">
-      <div class="pbi-head">Enterprise Performance Suite — flagship build <i>37-page production system · 5 pages shown · illustrative data</i></div>
+      <div class="pbi-head">The operating rhythm — one month, on rails <i>derived from a live multi-entity close work matrix · genericized</i></div>
+      <div class="rhythm-scroll">
+        <div class="rgrid">
+          <div class="role"></div>
+          <div class="dh">PRE-CLOSE<br>BD −6 → −1</div><div class="dh">DAY 1</div><div class="dh">DAY 2</div><div class="dh">DAY 3</div><div class="dh">DAY 4</div><div class="dh">DAY 5</div><div class="dh">DAY 6–8</div><div class="dh">DAY 10+</div>
+
+          <div class="role">Controllership</div>
+          <div class="rc ctl">Billing &amp; AP cut-offs · standing accruals · 2nd-run accruals · AR / AP / cash reconciliations</div>
+          <div class="rc ctl">Cash &amp; payroll entries · FX revaluation · intercompany eliminations</div>
+          <div class="rc ctl">Netting · trial balance review with controller</div>
+          <div class="rc ctl">TB submitted — <b>ledger locked</b></div>
+          <div></div><div></div><div></div>
+          <div class="rc ctl">Balance sheet substantiation → sign-off · tax filings prepared</div>
+
+          <div class="role">Business finance</div>
+          <div class="rc fin">Bad-debt review kicked off (quarterly) with collections</div>
+          <div class="rc fin">Revenue &amp; CoS accruals — performance-obligation based</div>
+          <div class="rc fin">Revenue &amp; P&amp;L review with CFO</div>
+          <div></div><div></div><div></div><div></div><div></div>
+
+          <div class="role">FP&amp;A</div>
+          <div></div><div></div><div></div><div></div>
+          <div class="rc fpa">Actuals refresh — one click; the whole pack updates</div>
+          <div class="rc fpa">Variance stories drafted per workstream</div>
+          <div class="rc fpa">RAG statused · R&amp;O updated → review pack issued</div>
+          <div class="rc fpa">Reforecast window (when due): budget-owner inputs → new baseline locked</div>
+
+          <div class="role">Treasury</div>
+          <div class="rc tre">Bank statements feed the close (dependency, not a task)</div>
+          <div></div><div></div><div></div><div></div>
+          <div class="rc tre">Monday AR snapshot → working-capital monitor</div>
+          <div></div>
+          <div class="rc tre">13-week cash refresh · what-if offsets</div>
+
+          <div class="role">Leadership</div>
+          <div></div><div></div><div></div><div></div><div></div><div></div>
+          <div class="rc lead">Business review — business · people · finance → decisions, owners, mandate</div>
+          <div class="rc lead">Simulations on demand — incentive &amp; cash what-ifs</div>
+        </div>
+      </div>
+      <div class="role-leg">
+        <span><i style="background:var(--scPY)"></i>Controllership</span>
+        <span><i style="background:var(--scRFC)"></i>Business finance</span>
+        <span><i style="background:#1B66C9"></i>FP&amp;A</span>
+        <span><i style="background:#8A6FD1"></i>Treasury</span>
+        <span><i style="background:#0E7C5B"></i>Leadership</span>
+        <span style="margin-left:auto;color:#98a1ac;">every task carries an owner, a dependency and a per-entity status — seven entities, one matrix</span>
+      </div>
+      <div style="padding:0 14px 14px;font-size:12px;color:var(--muted);">
+        <b style="color:var(--ink);">First cycle in a new organization:</b> one foundation week — ledger mapping, entity normalization, the close calendar itself, baselines locked — then this loop simply runs. Close feeds actuals; actuals feed the pack; the pack feeds the review; the review issues the mandate; the mandate feeds cash and simulations. Multiple titles, one product. Every panel below is an instrument in this score.
+      </div>
+    </div>
+
+    <!-- ============ 1 · ENTERPRISE PERFORMANCE SUITE ============ -->
+    <div class="card reveal pbi" style="padding:0;overflow:hidden;">
+      <div class="pbi-head">Enterprise Performance Suite — flagship build <i>37-page production system · 7 pages shown · illustrative data</i></div>
       <div class="xls-tabs" style="padding-top:6px;">
         <span data-t="mF">Executive cover</span>
         <span class="off" data-t="mPL">P&amp;L summary</span>
         <span class="off" data-t="mRAG">Progress &amp; RAG</span>
         <span class="off" data-t="mScen">Scenario studio</span>
+        <span class="off" data-t="mRO">Risks &amp; opportunities</span>
+        <span class="off" data-t="mTrend">Monthly trend</span>
         <span class="off" data-t="mCF">Liquidity</span>
       </div>
+
       <div class="wb-pane on" id="mF">
         <div style="padding:14px 16px;">
           <div style="display:flex;gap:8px;flex-wrap:wrap;">
-            <span class="slicer">Baseline: plan — locked ✓</span><span class="slicer">Scenario: reforecast ▾</span><span class="slicer">Refresh log ↻</span><span class="export">⇩ Export to Excel</span>
+            <span class="slicer">Baseline: plan — locked ✓</span><span class="slicer">Scenario: reforecast 3+9 ▾</span><span class="slicer">Refresh log ↻</span><span class="export">⇩ Export to Excel</span>
           </div>
           <p style="font-size:12.5px;color:var(--muted);margin:12px 0 8px;"><b style="color:var(--ink);">Suite navigation</b> — one governed cover page across 37:</p>
           <span class="chip">P&amp;L &amp; operating income</span><span class="chip">Revenue analysis — vs plan / vs forecast</span><span class="chip">Cost deep-dives</span><span class="chip">Workforce planning</span><span class="chip">Margin scorecards</span><span class="chip">Liquidity &amp; simulations</span><span class="chip">Risks &amp; opportunities</span><span class="chip">Refresh runbooks</span>
-          <div class="snap-cap" style="border-top:none;padding:12px 0 0;">governance on the cover: locked baselines, version stamp, refresh log, owner sign-off</div>
+          <div class="snap-cap" style="border-top:none;padding:12px 0 0;">governance on the cover: locked baselines, version stamp, refresh log, owner sign-off. The blended convention — X months of actuals + Y months of forecast — is assembled automatically in-model.</div>
         </div>
       </div>
+
       <div class="wb-pane" id="mPL">
         <div style="padding:14px 16px;">
-          <div class="kpis5" style="margin-top:0;">
-            <div class="kpi"><span>Revenue</span><b>12.4M</b><span class="pos">+3.4%</span></div>
-            <div class="kpi"><span>Gross profit</span><b>6.2M</b><span>50.0%</span></div>
-            <div class="kpi"><span>Operating costs</span><b>(2.0M)</b><span class="pos">+1.8% fav</span></div>
-            <div class="kpi"><span>Operating margin</span><b>33.9%</b><span class="pos">+210 bps</span></div>
-            <div class="kpi"><span>EBITDA</span><b>5.5M</b><span class="pos">+12.2%</span></div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:4px;">
+            <span class="tglgrp" data-grp="plview"><span class="on" data-p="plFY">Full year</span><span data-p="plMTD">MTD</span><span data-p="plYTD">YTD</span></span>
+            <span class="slicer">Left: actuals ▾</span><span class="slicer">Right: reforecast 3+9 ▾</span><span class="export">⇩ Export to Excel</span>
           </div>
-          <div class="xls"><table>
-            <tr><th>P&amp;L line</th><th>Actual</th><th>Plan</th><th>Δ%</th></tr>
-            <tr><td>Revenue</td><td>12.4M</td><td>12.0M</td><td class="pos">+3.4%</td></tr>
-            <tr><td>Direct costs</td><td>(6.2M)</td><td>(6.1M)</td><td class="neg">−1.6%</td></tr>
-            <tr><td>Operating costs</td><td>(2.0M)</td><td>(2.1M)</td><td class="pos">+1.8%</td></tr>
-            <tr><td><b>EBITDA</b></td><td><b>5.5M</b></td><td><b>4.9M</b></td><td class="pos"><b>+12.2%</b></td></tr>
-          </table></div>
-          <div class="snap-cap" style="border-top:none;padding:10px 0 0;">executive P&amp;L summary · balance sheet one-pager follows the same pattern</div>
+
+          <div class="wb-pane on" data-grp="plview" id="plFY">
+            <div class="kpis5" style="margin-top:8px;">
+              <div class="kpi"><span>Revenue</span><b>12.4M</b><span class="pos">+3.4%</span></div>
+              <div class="kpi"><span>Gross profit</span><b>6.2M</b><span>50.0%</span></div>
+              <div class="kpi"><span>Operating costs</span><b>(2.0M)</b><span class="pos">+1.8% fav</span></div>
+              <div class="kpi"><span>Operating margin</span><b>33.9%</b><span class="pos">+210 bps</span></div>
+              <div class="kpi"><span>EBITDA</span><b>5.5M</b><span class="pos">+12.2%</span></div>
+            </div>
+            <div class="xls"><table>
+              <tr><th>P&amp;L line</th><th>Actual</th><th>Plan</th><th>Δ</th><th>Δ%</th></tr>
+              <tr><td>Revenue</td><td>12.4M</td><td>12.0M</td><td class="pos">+0.4M</td><td class="pos">+3.4%</td></tr>
+              <tr><td>Direct costs</td><td>(6.2M)</td><td>(6.1M)</td><td class="neg">−0.1M</td><td class="neg">−1.6%</td></tr>
+              <tr><td>Workforce costs</td><td>(4.1M)</td><td>(4.3M)</td><td class="pos">+0.2M</td><td class="pos">+4.1%</td></tr>
+              <tr><td>Operating costs</td><td>(2.0M)</td><td>(2.1M)</td><td class="pos">+0.1M</td><td class="pos">+1.8%</td></tr>
+              <tr><td><b>EBITDA</b></td><td><b>5.5M</b></td><td><b>4.9M</b></td><td class="pos"><b>+0.6M</b></td><td class="pos"><b>+12.2%</b></td></tr>
+            </table></div>
+          </div>
+          <div class="wb-pane" data-grp="plview" id="plMTD">
+            <div class="kpis5" style="margin-top:8px;">
+              <div class="kpi"><span>Revenue — month</span><b>1.1M</b><span class="pos">+5.1%</span></div>
+              <div class="kpi"><span>Gross profit</span><b>0.6M</b><span>51.2%</span></div>
+              <div class="kpi"><span>Operating costs</span><b>(0.2M)</b><span class="neg">−2.3% unfav</span></div>
+              <div class="kpi"><span>Operating margin</span><b>35.1%</b><span class="pos">+140 bps</span></div>
+              <div class="kpi"><span>EBITDA — month</span><b>0.5M</b><span class="pos">+8.4%</span></div>
+            </div>
+            <div class="xls"><table>
+              <tr><th>P&amp;L line</th><th>Actual</th><th>Plan</th><th>Δ</th><th>Δ%</th></tr>
+              <tr><td>Revenue</td><td>1.10M</td><td>1.05M</td><td class="pos">+0.05M</td><td class="pos">+5.1%</td></tr>
+              <tr><td>Direct costs</td><td>(0.54M)</td><td>(0.53M)</td><td class="neg">−0.01M</td><td class="neg">−1.9%</td></tr>
+              <tr><td>Workforce costs</td><td>(0.34M)</td><td>(0.35M)</td><td class="pos">+0.01M</td><td class="pos">+2.9%</td></tr>
+              <tr><td>Operating costs</td><td>(0.18M)</td><td>(0.17M)</td><td class="neg">−0.01M</td><td class="neg">−2.3%</td></tr>
+              <tr><td><b>EBITDA</b></td><td><b>0.52M</b></td><td><b>0.48M</b></td><td class="pos"><b>+0.04M</b></td><td class="pos"><b>+8.4%</b></td></tr>
+            </table></div>
+          </div>
+          <div class="wb-pane" data-grp="plview" id="plYTD">
+            <div class="kpis5" style="margin-top:8px;">
+              <div class="kpi"><span>Revenue — YTD</span><b>7.9M</b><span class="pos">+2.8%</span></div>
+              <div class="kpi"><span>Gross profit</span><b>4.0M</b><span>50.6%</span></div>
+              <div class="kpi"><span>Operating costs</span><b>(1.2M)</b><span class="pos">+2.1% fav</span></div>
+              <div class="kpi"><span>Operating margin</span><b>34.4%</b><span class="pos">+180 bps</span></div>
+              <div class="kpi"><span>EBITDA — YTD</span><b>3.5M</b><span class="pos">+9.7%</span></div>
+            </div>
+            <div class="xls"><table>
+              <tr><th>P&amp;L line</th><th>Actual</th><th>Plan</th><th>Δ</th><th>Δ%</th></tr>
+              <tr><td>Revenue</td><td>7.90M</td><td>7.68M</td><td class="pos">+0.22M</td><td class="pos">+2.8%</td></tr>
+              <tr><td>Direct costs</td><td>(3.90M)</td><td>(3.86M)</td><td class="neg">−0.04M</td><td class="neg">−1.1%</td></tr>
+              <tr><td>Workforce costs</td><td>(2.60M)</td><td>(2.72M)</td><td class="pos">+0.12M</td><td class="pos">+4.4%</td></tr>
+              <tr><td>Operating costs</td><td>(1.20M)</td><td>(1.23M)</td><td class="pos">+0.03M</td><td class="pos">+2.1%</td></tr>
+              <tr><td><b>EBITDA</b></td><td><b>3.50M</b></td><td><b>3.19M</b></td><td class="pos"><b>+0.31M</b></td><td class="pos"><b>+9.7%</b></td></tr>
+            </table></div>
+          </div>
+          <div class="snap-cap" style="border-top:none;padding:10px 0 0;">time views on one page — full year, month-to-date, year-to-date · every variance drillable to GL line and transaction · balance sheet one-pager follows the same pattern</div>
         </div>
       </div>
+
       <div class="wb-pane" id="mRAG">
         <div style="padding:14px 16px;">
+          <div class="pill-kpis">
+            <div class="pill"><span>_TIME PROGRESS %</span><b>42%</b></div>
+            <div class="pill"><span>_TOTAL COST PROGRESS %</span><b>38%</b></div>
+            <div class="pill"><span>_SALES PROGRESS %</span><b>82%</b></div>
+            <div class="pill p-green"><span>_RAG STATUS (TILE)</span><b>ON TRACK</b></div>
+          </div>
+          <p style="font-size:12px;color:var(--muted);margin:0 0 10px;">The benchmark question the page answers: <b style="color:var(--ink);">is there a disconnect</b> between how far we are in the year, how much we've sold, and how much we've spent? Here: 42% of the year gone, 82% of the sales landed, only 38% of the cost spent — ahead of plan, and the tile says so before anyone opens a table.</p>
           <div class="xls"><table>
-            <tr><th>Workstream</th><th>YTD vs plan</th><th>Status</th><th>Owner</th></tr>
-            <tr><td>Revenue</td><td class="pos">+3.4%</td><td><span class="stat s-ok">GREEN</span></td><td>Commercial</td></tr>
-            <tr><td>Operating costs</td><td class="pos">+1.8% fav</td><td><span class="stat s-ok">GREEN</span></td><td>Finance</td></tr>
-            <tr><td>Workforce costs</td><td class="neg">−4.1% unfav</td><td><span class="stat s-due">AMBER</span></td><td>People</td></tr>
-            <tr><td>Revenue pipeline</td><td class="neg">−12.0%</td><td><span class="stat s-red">RED</span></td><td>Commercial</td></tr>
-            <tr><td>Cash conversion</td><td class="pos">−6 days</td><td><span class="stat s-ok">GREEN</span></td><td>Treasury</td></tr>
+            <tr><th>Allocation center</th><th>Sales progress %</th><th>Cost progress %</th><th>Balance to go</th><th>RAG status</th></tr>
+            <tr><td>Fee-earning teams</td><td class="pos">82%</td><td>38%</td><td>4.5M</td><td style="background:#17805B;color:#fff;font-weight:800;text-align:center;">ON TRACK</td></tr>
+            <tr><td>Business services</td><td>—</td><td>27%</td><td>0.8M</td><td style="background:#17805B;color:#fff;font-weight:800;text-align:center;">ON TRACK</td></tr>
+            <tr><td>Workforce costs</td><td>—</td><td class="neg">46%</td><td>1.5M</td><td style="background:#E5A54B;color:#fff;font-weight:800;text-align:center;">AT WATCH</td></tr>
+            <tr><td>Revenue pipeline</td><td class="neg">−12.0%</td><td>—</td><td>2.2M</td><td style="background:#C0392B;color:#fff;font-weight:800;text-align:center;">AT RISK</td></tr>
+            <tr><td><b>Total</b></td><td class="pos"><b>82%</b></td><td><b>38%</b></td><td><b>—</b></td><td style="background:#17805B;color:#fff;font-weight:800;text-align:center;">ON TRACK</td></tr>
           </table></div>
-          <div class="snap-cap" style="border-top:none;padding:10px 0 0;">progress &amp; RAG review — every workstream statused, owned, actioned. This page runs the monthly performance review.</div>
+          <div class="snap-cap" style="border-top:none;padding:10px 0 0;">YTD actuals vs full-year forecast progress — every workstream statused, owned, actioned, with the balance left against the latest agreed baseline. This page runs the monthly performance review.</div>
         </div>
       </div>
+
       <div class="wb-pane" id="mScen">
         <div style="padding:14px 16px;">
           <div style="display:flex;gap:6px;flex-wrap:wrap;padding-bottom:10px;"><span class="chip">Plan · locked</span><span class="chip" style="background:var(--navy-deep);color:#fff;">Reforecast 3+9</span><span class="chip">Reforecast 6+6</span><span class="chip">Actuals YTD</span></div>
-          <p style="font-size:12.5px;color:var(--muted);margin-bottom:10px;">Blended convention: <b style="color:var(--ink);">X months of actuals + Y months of forecast</b>, assembled automatically in-model. No manual splicing, ever.</p>
+          <p style="font-size:12.5px;color:var(--muted);margin-bottom:10px;">Blended convention: <b style="color:var(--ink);">X months of actuals + Y months of forecast</b>, assembled automatically in-model. No manual splicing, ever. Versioned baselines stay comparable forever — any two, side by side, any time view.</p>
           <div class="xls"><table>
-            <tr><th>Scenario</th><th>EBITDA</th><th>vs plan</th></tr>
-            <tr><td>Plan (locked baseline)</td><td>4.9M</td><td>—</td></tr>
-            <tr><td>Reforecast 3+9</td><td>5.3M</td><td class="pos">+8.2%</td></tr>
-            <tr><td>Actuals YTD</td><td>5.5M</td><td class="pos">+12.2%</td></tr>
+            <tr><th>Scenario</th><th>Revenue</th><th>EBITDA</th><th>vs plan</th></tr>
+            <tr><td>Plan (locked baseline)</td><td>12.0M</td><td>4.9M</td><td>—</td></tr>
+            <tr><td>Reforecast 3+9</td><td>12.2M</td><td>5.3M</td><td class="pos">+8.2%</td></tr>
+            <tr><td>Reforecast 6+6</td><td>12.3M</td><td>5.4M</td><td class="pos">+10.1%</td></tr>
+            <tr><td>Actuals YTD</td><td>12.4M</td><td>5.5M</td><td class="pos">+12.2%</td></tr>
           </table></div>
-          <div class="snap-cap" style="border-top:none;padding:10px 0 0;">scenario studio — versioned baselines stay comparable forever</div>
+          <div class="snap-cap" style="border-top:none;padding:10px 0 0;">scenario studio — the latest agreed reforecast is what gives every budget owner their mandate. Locked. Versioned. Auditable.</div>
         </div>
       </div>
+
+      <div class="wb-pane" id="mRO">
+        <div style="padding:14px 16px;">
+          <p style="font-size:12.5px;color:var(--muted);margin-bottom:6px;">A forecast is a list of assumptions. The <b style="color:var(--ink);">risks &amp; opportunities log</b> documents what could go differently — probability-weighted, owned, and netted into scenarios beyond the official forecast.</p>
+          <div class="xls"><table>
+            <tr><th>Type</th><th>Assumption at risk / upside</th><th>Prob.</th><th>Max</th><th>Weighted</th></tr>
+            <tr><td><span class="stat s-ok">OPP</span></td><td>Recovery of pipeline beyond the reduced scenario</td><td>50%</td><td class="pos">+2.5M</td><td class="pos">+1.25M</td></tr>
+            <tr><td><span class="stat s-ok">OPP</span></td><td>Improved direct-cost terms on flagship deal</td><td>50%</td><td class="pos">+2.0M</td><td class="pos">+1.00M</td></tr>
+            <tr><td><span class="stat s-ok">OPP</span></td><td>Deferred hiring — two roles slip to next year</td><td>60%</td><td class="pos">+0.1M</td><td class="pos">+0.06M</td></tr>
+            <tr><td><span class="stat s-red">RISK</span></td><td>Forecast sales uplift not materialising</td><td>50%</td><td class="neg">−1.2M</td><td class="neg">−0.60M</td></tr>
+            <tr><td><b>Net</b></td><td></td><td><b>—</b></td><td class="pos"><b>+4.6M / −1.2M</b></td><td class="pos"><b>+1.71M</b></td></tr>
+          </table></div>
+          <div class="torn" aria-hidden="true">
+            <div class="trow"><span>R&amp;O Opportunity (maximum)</span><div class="lane"><em></em><i style="left:26%;width:60%;background:#17805B;"></i></div><b class="pos">+4.6M</b></div>
+            <div class="trow"><span>R&amp;O Opportunity (weighted)</span><div class="lane"><em></em><i style="left:26%;width:30%;background:#63BF9C;"></i></div><b class="pos">+2.3M</b></div>
+            <div class="trow"><span>R&amp;O Net (weighted)</span><div class="lane"><em></em><i style="left:26%;width:22.3%;background:#E5A54B;"></i></div><b>+1.7M</b></div>
+            <div class="trow"><span>R&amp;O Risk (weighted)</span><div class="lane"><em></em><i style="left:18.2%;width:7.8%;background:#F0A3AD;"></i></div><b class="neg">−0.6M</b></div>
+            <div class="trow"><span>R&amp;O Risk (maximum)</span><div class="lane"><em></em><i style="left:10.3%;width:15.7%;background:#D6455B;"></i></div><b class="neg">−1.2M</b></div>
+          </div>
+          <div class="snap-cap" style="border-top:none;padding:10px 0 0;">R&amp;O sensitivity — a realistic outcome corridor around the year-end view, read in five bars: best case, weighted upside, net expectation, weighted downside, worst case. A good log is roughly net-neutral; a lopsided one is a conversation.</div>
+        </div>
+      </div>
+
+      <div class="wb-pane" id="mTrend">
+        <div style="padding:14px 16px;">
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:4px;align-items:center;">
+            <span class="slicer">Measure: sales &amp; operating profit ▾</span><span class="slicer">Grouping: profit bridge ▾</span>
+            <span class="leg" style="margin:0;"><span><i class="c-py"></i>Prior-year actuals</span><span><i class="c-act"></i>Actuals</span><span><i class="c-plan"></i>Plan · locked</span><span><i class="c-rfc"></i>Reforecast 3+9</span></span>
+          </div>
+          <p style="font-size:11px;color:var(--muted);margin:6px 0 0;"><b style="color:var(--ink);">Sales — monthly, all baselines overlaid</b></p>
+          <div class="trend" aria-hidden="true">
+            <div class="mgrp"><i class="c-py" style="height:8%"></i><i class="c-act" style="height:9%"></i><i class="c-plan" style="height:10%"></i><i class="c-rfc" style="height:9%"></i></div>
+            <div class="mgrp"><i class="c-py" style="height:22%"></i><i class="c-act" style="height:10%"></i><i class="c-plan" style="height:10%"></i><i class="c-rfc" style="height:9%"></i></div>
+            <div class="mgrp"><i class="c-py" style="height:8%"></i><i class="c-act" style="height:9%"></i><i class="c-plan" style="height:9%"></i><i class="c-rfc" style="height:9%"></i></div>
+            <div class="mgrp"><i class="c-py" style="height:9%"></i><i class="c-act" style="height:96%"></i><i class="c-plan" style="height:10%"></i><i class="c-rfc" style="height:96%"></i></div>
+            <div class="mgrp"><i class="c-py" style="height:8%"></i><i class="c-act" style="height:9%"></i><i class="c-plan" style="height:10%"></i><i class="c-rfc" style="height:9%"></i></div>
+            <div class="mgrp"><i class="c-py" style="height:8%"></i><i class="c-act" style="height:0%"></i><i class="c-plan" style="height:9%"></i><i class="c-rfc" style="height:9%"></i></div>
+            <div class="mgrp"><i class="c-py" style="height:8%"></i><i class="c-act" style="height:0%"></i><i class="c-plan" style="height:10%"></i><i class="c-rfc" style="height:9%"></i></div>
+            <div class="mgrp"><i class="c-py" style="height:8%"></i><i class="c-act" style="height:0%"></i><i class="c-plan" style="height:10%"></i><i class="c-rfc" style="height:9%"></i></div>
+            <div class="mgrp"><i class="c-py" style="height:8%"></i><i class="c-act" style="height:0%"></i><i class="c-plan" style="height:9%"></i><i class="c-rfc" style="height:10%"></i></div>
+            <div class="mgrp"><i class="c-py" style="height:2%"></i><i class="c-act" style="height:0%"></i><i class="c-plan" style="height:10%"></i><i class="c-rfc" style="height:10%"></i></div>
+            <div class="mgrp"><i class="c-py" style="height:8%"></i><i class="c-act" style="height:0%"></i><i class="c-plan" style="height:10%"></i><i class="c-rfc" style="height:16%"></i></div>
+            <div class="mgrp"><i class="c-py" style="height:38%"></i><i class="c-act" style="height:0%"></i><i class="c-plan" style="height:12%"></i><i class="c-rfc" style="height:30%"></i></div>
+          </div>
+          <div class="trend-x"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span></div>
+          <p style="font-size:11px;color:var(--muted);margin:8px 0 0;"><b style="color:var(--ink);">Operating profit — the same months, as lines</b></p>
+          <svg class="svgline" viewBox="0 0 720 130" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="18" y1="104" x2="708" y2="104" stroke="#e4e8ee" stroke-width="1.5"/>
+            <text x="6" y="107" font-size="9" fill="#98a1ac">0</text>
+            <polyline fill="none" stroke="#98A0AC" stroke-width="2" points="30,84 90,84 150,84 210,82 270,84 330,84 390,84 450,84 510,82 570,84 630,84 690,80"/>
+            <polyline fill="none" stroke="#D6455B" stroke-width="2" points="30,90 90,70 150,92 210,86 270,96 330,92 390,90 450,90 510,94 570,88 630,92 690,56"/>
+            <polyline fill="none" stroke="#12A5BC" stroke-width="2.4" points="30,88 90,86 150,90 210,14 270,92 330,98 390,90 450,90 510,84 570,86 630,80 690,58"/>
+          </svg>
+          <div class="trend-x"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span></div>
+          <div class="snap-cap" style="border-top:none;padding:8px 0 0;">comparative monthly trend — one milestone month can make the year; overlaying every baseline makes phasing, seasonality and slippage undeniable at a glance. Actuals stop at the cutoff month by design: the blend picks up the forecast from there.</div>
+        </div>
+      </div>
+
       <div class="wb-pane" id="mCF">
         <div style="padding:14px 16px;">
           <div class="kpis5" style="margin-top:0;">
@@ -583,75 +842,262 @@
           </div>
           <div class="flowsnap" style="padding:4px 0 8px;"><span>Ledger + receivables</span><em>→</em><span class="ctrl">Cash tagging</span><em>→</em><span class="ctrl">Runoff × profiles</span><em>→</em><span>13-week liquidity view</span></div>
           <span class="chip">19-step update checklist in the suite</span><span class="chip">Refresh guide included</span><span class="export">⇩ Export to Excel</span>
-          <div class="snap-cap" style="border-top:none;padding:12px 0 0;">liquidity analysis + governed update runbook</div>
+          <div class="snap-cap" style="border-top:none;padding:12px 0 0;">liquidity analysis + governed update runbook — the full engine is on display in its own showroom panel below</div>
         </div>
       </div>
     </div>
 
+    <!-- ============ 2 · WORKING CAPITAL MONITOR ============ -->
     <div class="card reveal pbi" style="margin-top:18px;padding:0;overflow:hidden;">
-      <div class="pbi-head">Working Capital Monitor — receivables build <i>11-page production system · 3 pages shown · payables mirror uses the same model</i></div>
+      <div class="pbi-head">Working Capital Monitor — receivables build <i>11-page production system · 4 pages shown · payables mirror uses the same model</i></div>
       <div class="xls-tabs" style="padding-top:6px;">
         <span data-t="aE">Portfolio overview</span>
+        <span class="off" data-t="aM">Aging by unit</span>
         <span class="off" data-t="aD">Account drilldown</span>
         <span class="off" data-t="aW">Week-over-week</span>
       </div>
+
       <div class="wb-pane on" id="aE">
         <div style="padding:14px 16px;">
-          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;">
-            <span class="slicer">Business unit ▾</span><span class="slicer">Legal status ▾</span><span class="slicer">Timeline ▾</span><span class="slicer">Snapshot: week 24</span><span class="export">⇩ Governed data download</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:center;">
+            <span class="tglgrp" data-grp="arseg"><span class="on" data-p="arAll">All AR</span><span data-p="arOver">AR &gt; 90</span><span data-p="arUnder">AR ≤ 90</span></span>
+            <span class="slicer">Business unit ▾</span><span class="slicer">Legal status ▾</span><span class="slicer">Snapshot: week 24 ▾</span><span class="export">⇩ Governed data download</span>
           </div>
-          <div class="kpis5" style="margin-top:0;">
-            <div class="kpi"><span>Total open balance</span><b>2.79M</b></div>
-            <div class="kpi"><span>Overdue &gt; 90</span><b class="neg">305K</b></div>
-            <div class="kpi"><span>Business units</span><b>12</b></div>
-            <div class="kpi"><span>ECL provision</span><b>1.4%</b></div>
+
+          <div class="wb-pane on" data-grp="arseg" id="arAll">
+            <div class="kpis5" style="margin-top:0;">
+              <div class="kpi"><span>Total open balance</span><b>2.79M</b></div>
+              <div class="kpi"><span>Overdue &gt; 90 — watch signal</span><b class="neg">400K</b></div>
+              <div class="kpi"><span>Business units</span><b>12</b></div>
+              <div class="kpi"><span>ECL provision</span><b>1.4%</b></div>
+            </div>
           </div>
+          <div class="wb-pane" data-grp="arseg" id="arOver">
+            <div class="kpis5" style="margin-top:0;">
+              <div class="kpi"><span>Open balance — aged &gt; 90</span><b class="neg">400K</b></div>
+              <div class="kpi"><span>Under legal follow-up</span><b>95K</b></div>
+              <div class="kpi"><span>Units affected</span><b>5</b></div>
+              <div class="kpi"><span>Provision assessed</span><b>ECL ✓</b></div>
+            </div>
+          </div>
+          <div class="wb-pane" data-grp="arseg" id="arUnder">
+            <div class="kpis5" style="margin-top:0;">
+              <div class="kpi"><span>Open balance — ≤ 90 days</span><b>2.39M</b></div>
+              <div class="kpi"><span>Current, likely fine</span><b class="pos">1.84M</b></div>
+              <div class="kpi"><span>Worth monitoring 31–60</span><b>340K</b></div>
+              <div class="kpi"><span>Needs a chase 61–90</span><b>210K</b></div>
+            </div>
+          </div>
+
           <div class="rl-grid">
             <div class="agebars" style="padding:0;">
               <div class="row"><span>0–30</span><i style="width:80%"></i><b>1.84M</b></div>
-              <div class="row"><span>31–60</span><i style="width:36%"></i><b>640K</b></div>
+              <div class="row"><span>31–60</span><i style="width:26%"></i><b>340K</b></div>
               <div class="row warn"><span>61–90</span><i style="width:15%"></i><b>210K</b></div>
-              <div class="row bad"><span>90+</span><i style="width:8%"></i><b>95K</b></div>
+              <div class="row bad"><span>90+</span><i style="width:12%"></i><b>400K</b></div>
             </div>
             <div class="xls"><table>
-              <tr><th>Business unit</th><th>Open balance</th></tr>
-              <tr><td>Advisory services</td><td>1.10M</td></tr>
-              <tr><td>Managed services</td><td>820K</td></tr>
-              <tr><td>Operations</td><td>480K</td></tr>
-              <tr><td>Transactions</td><td>390K</td></tr>
+              <tr><th>Business unit</th><th>Open balance</th><th>&gt; 90</th></tr>
+              <tr><td>Advisory services</td><td>1.10M</td><td class="neg">120K</td></tr>
+              <tr><td>Managed services</td><td>820K</td><td class="neg">95K</td></tr>
+              <tr><td>Operations</td><td>480K</td><td class="neg">105K</td></tr>
+              <tr><td>Transactions</td><td>390K</td><td class="neg">80K</td></tr>
             </table></div>
           </div>
-          <div class="snap-cap" style="border-top:none;padding:12px 0 0;">weekly snapshot model · legal-status tracking · every view exportable</div>
+          <div class="snap-cap" style="border-top:none;padding:12px 0 0;">managed by exception — the watch signal is aged &gt; 90 days. Weekly snapshot model · legal-status tracking · every view exportable.</div>
         </div>
       </div>
+
+      <div class="wb-pane" id="aM">
+        <div style="padding:14px 16px;">
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;">
+            <span class="slicer">Aging bucket ▾</span><span class="slicer">Legal status ▾</span><span class="slicer">Snapshot: week 24 ▾</span>
+          </div>
+          <div class="xls"><table>
+            <tr><th>Business unit</th><th>Current</th><th>1–30</th><th>31–60</th><th>61–90</th><th>91–180</th><th>181+</th><th>Total</th></tr>
+            <tr><td>Advisory services</td><td>420K</td><td>380K</td><td>110K</td><td>70K</td><td>75K</td><td>45K</td><td><b>1.10M</b></td></tr>
+            <tr><td>Managed services</td><td>310K</td><td>270K</td><td>90K</td><td>55K</td><td>60K</td><td>35K</td><td><b>820K</b></td></tr>
+            <tr><td>Operations</td><td>160K</td><td>130K</td><td>50K</td><td>35K</td><td>65K</td><td>40K</td><td><b>480K</b></td></tr>
+            <tr><td>Transactions</td><td>140K</td><td>110K</td><td>40K</td><td>20K</td><td>50K</td><td>30K</td><td><b>390K</b></td></tr>
+            <tr><td><b>Total</b></td><td><b>1.03M</b></td><td><b>890K</b></td><td><b>290K</b></td><td><b>180K</b></td><td><b>250K</b></td><td><b>150K</b></td><td><b>2.79M</b></td></tr>
+          </table></div>
+          <div class="snap-cap" style="border-top:none;padding:10px 0 0;">aging matrix — unit × bucket, expandable to customer and invoice. The older the bucket, the harder the page makes you look at it.</div>
+        </div>
+      </div>
+
       <div class="wb-pane" id="aD">
         <div style="padding:14px 16px;">
           <div class="xls"><table>
-            <tr><th>Counterparty</th><th>Bucket</th><th>Open</th><th>Status</th></tr>
-            <tr><td>Account 001</td><td>Current</td><td>1,120,500</td><td><span class="stat s-ok">CURRENT</span></td></tr>
-            <tr><td>Account 002</td><td>61–90</td><td>240,300</td><td><span class="stat s-due">FOLLOW-UP</span></td></tr>
-            <tr><td>Account 003</td><td>90+</td><td>185,000</td><td><span class="stat s-red">LEGAL</span></td></tr>
-            <tr><td>Account 004</td><td>31–60</td><td>96,400</td><td><span class="stat s-ok">ACTIVE</span></td></tr>
+            <tr><th>Counterparty</th><th>Invoice ref</th><th>Bucket</th><th>Open</th><th>Status</th></tr>
+            <tr><td>Account 001</td><td>INV-0091</td><td>Current</td><td>1,120,500</td><td><span class="stat s-ok">CURRENT</span></td></tr>
+            <tr><td>Account 002</td><td>INV-0034</td><td>61–90</td><td>240,300</td><td><span class="stat s-due">FOLLOW-UP</span></td></tr>
+            <tr><td>Account 003</td><td>INV-0007</td><td>90+</td><td>185,000</td><td><span class="stat s-red">LEGAL</span></td></tr>
+            <tr><td>Account 004</td><td>INV-0058</td><td>31–60</td><td>96,400</td><td><span class="stat s-ok">ACTIVE</span></td></tr>
           </table></div>
-          <div class="snap-cap" style="border-top:none;padding:10px 0 0;">counterparty drilldown — collection notes travel with every balance</div>
+          <div class="snap-cap" style="border-top:none;padding:10px 0 0;">counterparty drilldown — invoice reference, due date and collection notes travel with every balance. An overdue invoice means the work was delivered but the contract isn't being honoured; the page keeps that visible.</div>
         </div>
       </div>
+
       <div class="wb-pane" id="aW">
         <div style="padding:14px 16px;">
           <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;">
-            <span class="slicer">Current: week 24</span><span class="slicer">Previous: week 23</span>
+            <span class="slicer">Current: week 24 ▾</span><span class="slicer">Previous: week 23 ▾</span>
           </div>
           <div class="xls"><table>
+            <tr><th>Snapshot date</th><th>Opening</th><th>WoW change</th><th>WoW %</th><th>Closing</th></tr>
+            <tr><td>Monday, week 21</td><td>2.51M</td><td class="neg">+70K</td><td class="neg">+2.8%</td><td>2.58M</td></tr>
+            <tr><td>Monday, week 22</td><td>2.58M</td><td class="pos">−120K</td><td class="pos">−4.7%</td><td>2.46M</td></tr>
+            <tr><td>Monday, week 23</td><td>2.46M</td><td class="neg">+390K</td><td class="neg">+15.9%</td><td>2.85M</td></tr>
+            <tr><td>Monday, week 24</td><td>2.85M</td><td class="pos">−60K</td><td class="pos">−2.1%</td><td><b>2.79M</b></td></tr>
+          </table></div>
+          <div class="xls" style="margin-top:10px;"><table>
             <tr><th>Business unit</th><th>Previous</th><th>Current</th><th>WoW %</th></tr>
             <tr><td>Advisory services</td><td>1.16M</td><td>1.10M</td><td class="pos">−5.2%</td></tr>
             <tr><td>Managed services</td><td>0.79M</td><td>0.82M</td><td class="neg">+3.8%</td></tr>
-            <tr><td><b>Total</b></td><td><b>2.46M</b></td><td><b>2.40M</b></td><td class="pos"><b>−2.4%</b></td></tr>
+            <tr><td><b>Total</b></td><td><b>2.85M</b></td><td><b>2.79M</b></td><td class="pos"><b>−2.1%</b></td></tr>
           </table></div>
-          <div class="snap-cap" style="border-top:none;padding:10px 0 0;">week-over-week discipline — every Monday comparable, every movement explained</div>
+          <div class="snap-cap" style="border-top:none;padding:10px 0 0;">week-over-week discipline — the balance rises when invoices are issued and falls when cash lands. Every Monday comparable, every movement explained.</div>
         </div>
       </div>
     </div>
 
+    <!-- ============ 3 · LIQUIDITY & CASH ENGINE ============ -->
+    <div class="card reveal pbi" style="margin-top:18px;padding:0;overflow:hidden;">
+      <div class="pbi-head">Liquidity &amp; Cash Command — direct-method engine <i>forecast + diagnostics + runbook · illustrative data</i></div>
+      <div class="xls-tabs" style="padding-top:6px;">
+        <span data-t="cfF">Cash flow forecast</span>
+        <span class="off" data-t="cfD">Diagnostics &amp; controls</span>
+        <span class="off" data-t="cfR">Refresh runbook</span>
+      </div>
+
+      <div class="wb-pane on" id="cfF">
+        <div style="padding:14px 16px;">
+          <div class="kpis5" style="margin-top:0;">
+            <div class="kpi"><span>Opening cash — ties to TB</span><b>5.0M</b></div>
+            <div class="kpi"><span>Receivables runoff in</span><b class="pos">+6.4M</b></div>
+            <div class="kpi"><span>Disbursements out</span><b class="neg">−5.1M</b></div>
+            <div class="kpi"><span>Cumulative net CF</span><b class="pos">+1.3M</b></div>
+            <div class="kpi"><span>Closing position</span><b>6.3M ✓</b></div>
+          </div>
+          <div class="wf" aria-hidden="true">
+            <div class="col"><i class="base" style="bottom:0;height:52%"></i></div>
+            <div class="col"><i class="up" style="bottom:52%;height:14%"></i></div>
+            <div class="col"><i class="down" style="bottom:58%;height:8%"></i></div>
+            <div class="col"><i class="up" style="bottom:58%;height:18%"></i></div>
+            <div class="col"><i class="down" style="bottom:66%;height:10%"></i></div>
+            <div class="col"><i class="up" style="bottom:66%;height:6%"></i></div>
+            <div class="col"><i class="base" style="bottom:0;height:66%"></i></div>
+          </div>
+          <div class="wf-x"><span>Opening</span><span>Collections</span><span>Payroll</span><span>Milestone in</span><span>Suppliers</span><span>Other</span><span>Closing</span></div>
+          <div class="xls" style="margin-top:8px;"><table>
+            <tr><th>Cash line</th><th>M1</th><th>M2</th><th>M3</th><th>Total</th></tr>
+            <tr><td>Collections from customers</td><td class="pos">1.9M</td><td class="pos">2.3M</td><td class="pos">2.2M</td><td class="pos"><b>6.4M</b></td></tr>
+            <tr><td>Salaries &amp; on-costs</td><td class="neg">(0.9M)</td><td class="neg">(0.9M)</td><td class="neg">(1.0M)</td><td class="neg"><b>(2.8M)</b></td></tr>
+            <tr><td>Supplier payments</td><td class="neg">(0.6M)</td><td class="neg">(0.7M)</td><td class="neg">(0.6M)</td><td class="neg"><b>(1.9M)</b></td></tr>
+            <tr><td>Other operating</td><td class="neg">(0.1M)</td><td class="neg">(0.2M)</td><td class="neg">(0.1M)</td><td class="neg"><b>(0.4M)</b></td></tr>
+            <tr><td><b>Net cash flow</b></td><td class="pos"><b>+0.3M</b></td><td class="pos"><b>+0.5M</b></td><td class="pos"><b>+0.5M</b></td><td class="pos"><b>+1.3M</b></td></tr>
+          </table></div>
+          <div class="snap-cap" style="border-top:none;padding:10px 0 0;">direct-method view: profit is an opinion, cash is a fact — receivables runoff by ageing profile, disbursement scheduling, plan-to-cash conversion</div>
+        </div>
+      </div>
+
+      <div class="wb-pane" id="cfD">
+        <div style="padding:14px 16px;">
+          <p style="font-size:12.5px;color:var(--muted);margin-bottom:8px;">A forecast nobody can reconcile is a rumour. The engine ships with a <b style="color:var(--ink);">diagnostics page</b> that proves the model against the books before anyone reads a number:</p>
+          <div class="formsnap checklist">
+            <div class="fr"><span><b>Opening cash ties to trial balance</b> — model's bank position vs ledger bank accounts</span><span class="stat s-ok">TIED ✓</span></div>
+            <div class="fr"><span><b>Opening receivables tie to the AR listing</b> — model total vs subledger detail</span><span class="stat s-ok">TIED ✓</span></div>
+            <div class="fr"><span><b>As-of dates aligned</b> — receivables extract and trial balance from the same cutoff</span><span class="stat s-ok">ALIGNED</span></div>
+            <div class="fr"><span><b>Active scenario check</b> — all model bricks pulled for the latest agreed baseline</span><span class="stat s-ok">CURRENT</span></div>
+            <div class="fr"><span><b>Exception register</b> — known timing overrides with authoritative cash dates</span><span class="stat s-due">2 LOGGED</span></div>
+          </div>
+          <div class="snap-cap" style="border-top:none;padding:10px 0 0;">assumptions live in a governed rules workbook, not in someone's head — every override logged, dated, owned</div>
+        </div>
+      </div>
+
+      <div class="wb-pane" id="cfR">
+        <div style="padding:14px 16px;">
+          <p style="font-size:12.5px;color:var(--muted);margin-bottom:6px;">Every system I hand over ships with its own <b style="color:var(--ink);">refresh runbook</b> — so your team runs it without me:</p>
+          <div class="runsteps">
+            <div><em>1</em><span>Export receivables listing and trial balance as of the same cutoff date — misalignment creates an opening gap the model flags.</span></div>
+            <div><em>2</em><span>Update the rules workbook: payment-timing exceptions, large invoices with known collection dates.</span></div>
+            <div><em>3</em><span>Refresh — one click. Power Query rebuilds sources, tagging, runoff and outputs.</span></div>
+            <div><em>4</em><span>Run the diagnostics page: opening positions tied, dates aligned, active scenario confirmed.</span></div>
+            <div><em>5</em><span>Archive the superseded baseline. Publish. The review reads the same page everyone trusts.</span></div>
+          </div>
+          <div class="snap-cap" style="border-top:none;padding:10px 0 0;">administrator playbooks and runbooks are part of every deployment — see Finance academy in the suite above</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 4 · WORKFORCE & INCENTIVE STUDIO ============ -->
+    <div class="card reveal pbi" style="margin-top:18px;padding:0;overflow:hidden;">
+      <div class="pbi-head">Workforce &amp; Incentive Studio <i>headcount planning + bonus simulation · illustrative data</i></div>
+      <div class="xls-tabs" style="padding-top:6px;">
+        <span data-t="wfP">Workforce plan</span>
+        <span class="off" data-t="wfB">Incentive simulator</span>
+      </div>
+
+      <div class="wb-pane on" id="wfP">
+        <div style="padding:14px 16px;">
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
+            <span class="slicer">Scenario: reforecast 3+9 ▾</span><span class="slicer">Center: all ▾</span>
+          </div>
+          <div class="fte" aria-hidden="true">
+            <div class="col"><i class="pc" style="height:42%"></i><i class="cc" style="height:30%"></i></div>
+            <div class="col"><i class="pc" style="height:44%"></i><i class="cc" style="height:33%"></i></div>
+            <div class="col"><i class="pc" style="height:44%"></i><i class="cc" style="height:33%"></i></div>
+            <div class="col"><i class="pc" style="height:46%"></i><i class="cc" style="height:33%"></i></div>
+            <div class="col"><i class="pc" style="height:43%"></i><i class="cc" style="height:31%"></i></div>
+            <div class="col"><i class="pc" style="height:44%"></i><i class="cc" style="height:31%"></i></div>
+            <div class="col"><i class="pc" style="height:46%"></i><i class="cc" style="height:32%"></i></div>
+            <div class="col"><i class="pc" style="height:47%"></i><i class="cc" style="height:32%"></i></div>
+            <div class="col"><i class="pc" style="height:46%"></i><i class="cc" style="height:32%"></i></div>
+            <div class="col"><i class="pc" style="height:46%"></i><i class="cc" style="height:32%"></i></div>
+            <div class="col"><i class="pc" style="height:46%"></i><i class="cc" style="height:32%"></i></div>
+            <div class="col"><i class="pc" style="height:46%"></i><i class="cc" style="height:32%"></i></div>
+          </div>
+          <div class="leg" style="padding:0 12px 8px;"><span><i class="pc" style="background:#1B66C9;"></i>Fee-earning teams</span><span><i class="cc" style="background:#C3CDD9;"></i>Business services</span></div>
+          <div class="xls"><table>
+            <tr><th>Center</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Avg FTE</th></tr>
+            <tr><td>Fee-earning teams</td><td>61</td><td>63</td><td>66</td><td>66</td><td><b>64.0</b></td></tr>
+            <tr><td>Business services</td><td>43</td><td>46</td><td>46</td><td>46</td><td><b>45.3</b></td></tr>
+            <tr><td><b>Total</b></td><td><b>104</b></td><td><b>109</b></td><td><b>112</b></td><td><b>112</b></td><td><b>109.3</b></td></tr>
+          </table></div>
+          <div class="snap-cap" style="border-top:none;padding:10px 0 0;">monthly FTE by scenario — joiners, leavers and new-hire phasing flow straight into workforce cost in the P&amp;L, with burden-rate monitoring per team</div>
+        </div>
+      </div>
+
+      <div class="wb-pane" id="wfB">
+        <div style="padding:14px 16px;">
+          <p style="font-size:12.5px;color:var(--muted);margin-bottom:8px;">What gets measured gets done — and what gets simulated gets agreed. The incentive simulator prices any bonus scheme against any scenario <b style="color:var(--ink);">before</b> it's promised:</p>
+          <div class="kpis5" style="margin-top:0;">
+            <div class="kpi"><span>Target achievement</span><b>121%</b></div>
+            <div class="kpi"><span>Simulated pool</span><b class="neg">−320K</b></div>
+            <div class="kpi"><span>Pool vs profit</span><b>15%</b></div>
+            <div class="kpi"><span>Profit after pool</span><b class="pos">1.79M</b></div>
+          </div>
+          <div class="rl-grid">
+            <div class="xls"><table>
+              <tr><th>Achievement bracket</th><th>Soft</th><th>Medium</th><th>Hard</th></tr>
+              <tr><td>Below 80%</td><td>0.0×</td><td>0.0×</td><td>0.0×</td></tr>
+              <tr><td>Above 90%</td><td>1.0×</td><td>1.0×</td><td>1.0×</td></tr>
+              <tr><td>Above 120%</td><td>1.2×</td><td>1.4×</td><td>1.5×</td></tr>
+              <tr><td>Above 150%</td><td>1.5×</td><td>2.0×</td><td>2.5×</td></tr>
+            </table></div>
+            <div class="formsnap">
+              <div class="fr"><span>Bracket &amp; multiplier tables — parameterized</span><span class="stat s-ok">GOVERNED</span></div>
+              <div class="fr"><span>Pool funds only from incremental profit</span><span class="stat s-ok">SELF-FUNDING</span></div>
+              <div class="fr"><span>Pool sized in months of salary — sanity check</span><span class="stat s-ok">2.8 MO</span></div>
+              <div class="fr"><span>Net profit after pool — every scenario</span><span class="stat s-ok">POSITIVE</span></div>
+            </div>
+          </div>
+          <div class="snap-cap" style="border-top:none;padding:10px 0 0;">incentive simulation — achievement curves, bracket profiles and pool caps, tested against the plan, the reforecast and the R&amp;O corridor</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 5 · BALANCE SHEET ASSURANCE ============ -->
     <div class="card reveal" style="margin-top:18px;padding:0;overflow:hidden;">
       <div class="xls-head" style="font-size:12.5px;">Balance sheet assurance — substantiation template, interactive <i>generic rebuild · illustrative data</i></div>
       <div class="xls-tabs" id="wbTabs" style="padding-top:6px;">
@@ -699,6 +1145,11 @@
         <div style="padding:10px 16px;font-size:12px;color:#47505c;"><b>Commentary:</b> Balance supported by open-invoice listing; 90+ exposure under legal follow-up, provision assessed under expected-credit-loss policy.</div>
         <div style="padding:0 16px 14px;font-size:11.5px;color:var(--muted);">Preparer <span class="ok">✓</span> · Reviewer <span class="stat s-due">PENDING</span> · Approver ○</div>
       </div>
+    </div>
+
+    <div class="reveal" style="text-align:center;margin-top:26px;">
+      <p style="font-size:14px;color:var(--muted);margin-bottom:14px;">Liked the test drive? The production builds run live, on your data, refreshed from your ERP.</p>
+      <a class="btn btn-p" href="#contact">Book the live walkthrough →</a>
     </div>
   </div>
 </section>
@@ -850,16 +1301,32 @@
 </footer>
 
 <script>
+  // Scroll reveal
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Tab groups (workbook / dashboard page tabs)
   document.querySelectorAll('.xls-tabs').forEach(g => {
     const spans = g.querySelectorAll('span[data-t]');
     spans.forEach(t => t.addEventListener('click', () => {
       spans.forEach(x => { x.classList.add('off'); const p = document.getElementById(x.dataset.t); if (p) p.classList.remove('on'); });
       t.classList.remove('off');
       const p = document.getElementById(t.dataset.t); if (p) p.classList.add('on');
+    }));
+  });
+
+  // Toggle groups (time views, AR segments) — panes share the group's data-grp
+  document.querySelectorAll('.tglgrp').forEach(g => {
+    const grp = g.dataset.grp;
+    const btns = g.querySelectorAll('span[data-p]');
+    btns.forEach(b => b.addEventListener('click', () => {
+      btns.forEach(x => x.classList.remove('on'));
+      b.classList.add('on');
+      document.querySelectorAll('.wb-pane[data-grp="' + grp + '"]').forEach(p => p.classList.remove('on'));
+      const target = document.getElementById(b.dataset.p);
+      if (target) target.classList.add('on');
     }));
   });
 </script>
