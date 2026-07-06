@@ -168,6 +168,20 @@
   .phases b { font-size: 9px; letter-spacing: 0.8px; color: var(--navy-deep); flex-basis: 100%; }
   .phases span { font-size: 9.5px; font-weight: 650; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 3px 8px; color: #47505c; }
   .phases em { color: #c3cad3; font-style: normal; font-size: 11px; }
+  /* START-HERE PATH */
+  .startpath { display: grid; grid-template-columns: repeat(auto-fit, minmax(158px,1fr)); gap: 10px; margin: 4px 0 16px; counter-reset: sp; }
+  .startpath .s { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 14px 14px 44px; }
+  .startpath .s::before { counter-increment: sp; content: counter(sp); position: absolute; left: 12px; top: 13px; width: 23px; height: 23px; border-radius: 50%; background: linear-gradient(135deg,#1B66C9,#0FB5A6); color:#fff; font-size:11px; font-weight:800; display:flex;align-items:center;justify-content:center; }
+  .startpath .s b { display:block; font-size:13px; }
+  .startpath .s span { font-size:11.5px; color: var(--muted); }
+  .startpath .s.later { background: var(--bg); border-style: dashed; }
+  .startpath .s.later::before { background: #aab3bf; }
+  .dtree { padding: 10px 0 0; font-size: 11.5px; }
+  .dtree .lvl { display:flex; gap:7px; align-items:center; flex-wrap:wrap; padding: 4px 0; }
+  .dtree .node { border:1px solid var(--line); border-radius:7px; padding:3px 10px; background:#fff; }
+  .dtree .root { background: var(--navy-deep); color:#fff; border:none; font-weight:600; }
+  .dtree .op { color:#b3bcc8; font-weight:700; }
+  .dtree .ind { padding-left: 20px; }
   /* SHOWROOM INTERACTIVE CONTROLS */
   .demo-strip { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 0 0 20px; font-size: 13px; color: var(--muted); }
   .demo-strip .pulse-tag { font-size: 11px; font-weight: 800; letter-spacing: 0.8px; padding: 4px 12px; border-radius: 999px; background: var(--navy-deep); color: #7DD3FC; }
@@ -292,11 +306,12 @@
   <div class="wrap nav">
     <div class="logo"><span class="logo-mark">KH</span><span>Kareem Hesham<small>THE FINANCE ENGINE</small></span></div>
     <nav class="nav-links">
-      <a class="hide-m" href="#suite">Suite</a>
+      <a class="hide-m" href="#suite">The Suite</a>
       <a class="hide-m" href="#platform">Showroom</a>
       <a class="hide-m" href="#method">Method</a>
-      <a class="hide-m" href="#future">2030</a>
-      <a class="hide-m" href="#about">About</a>
+      <a class="hide-m" href="#future">Horizon</a>
+      <a class="hide-m" href="#about">Practitioner</a>
+      <a class="hide-m" href="#fineprint">Fine print</a>
       <a class="hide-m" href="#contact">Contact</a>
       <span class="avail"><span class="dot"></span>Available</span>
     </nav>
@@ -366,6 +381,15 @@
     <span class="kicker reveal">The Executive Suite</span>
     <h2 class="reveal">A complete finance operating system — module by module.</h2>
     <p class="lbl reveal">One practice, three grades of service — <b style="color:var(--ink);">Controller-grade</b> close and control, <b style="color:var(--ink);">CFO-grade</b> planning and performance, and <b style="color:var(--ink);">Governance-grade</b> board and investor reporting. Every module is a system I designed, built and ran in production inside multinationals — rebuilt here with illustrative data. Expand a tier; take what your review is missing.</p>
+
+    <div class="startpath reveal">
+      <div class="s"><b>Fix the close</b><span>A defensible three-day close, first.</span></div>
+      <div class="s"><b>Lock the forecast</b><span>Baseline, reforecast, driver-based plan.</span></div>
+      <div class="s"><b>Install the review rhythm</b><span>The monthly pack that ends in decisions.</span></div>
+      <div class="s"><b>Add board &amp; investor reporting</b><span>Governance-grade packs, governed KPIs.</span></div>
+      <div class="s later"><b>Add capital &amp; market intelligence</b><span>Investment and risk analytics — when ready.</span></div>
+    </div>
+    <p class="lbl reveal" style="margin:-8px 0 30px;"><b style="color:var(--ink);">Not sure where you sit?</b> Most engagements start at step 1 or 2 — one call scopes it. Typical first deployment: 2–6 weeks, depending on entity count and data readiness.</p>
 
     <details class="tier reveal" open>
       <summary>
@@ -496,6 +520,25 @@
         </div>
         <span class="tool t-xl">EXCEL</span><span class="tool t-vba">VBA</span>
       </div>
+      </div>
+
+      <div class="card" style="margin-top:16px;padding:0;overflow:hidden;">
+        <div class="pbi-head" style="background:#1B7A4B;">Control evidence &amp; audit trail — the layer auditors ask for <i>SOX-aligned · illustrative data</i></div>
+        <div class="xls" style="padding:2px 0 0;"><table>
+          <tr><th>Control</th><th>Risk addressed</th><th>Owner</th><th>Freq.</th><th>Evidence</th><th>Reviewer</th><th>State</th></tr>
+          <tr><td>Bank reconciliation</td><td>Misstated cash</td><td>Controller</td><td>Monthly</td><td>Rec + statement</td><td>FD</td><td><span class="stat s-ok">PASS</span></td></tr>
+          <tr><td>Revenue cut-off</td><td>Wrong period</td><td>Rev. accountant</td><td>Monthly</td><td>Cut-off test</td><td>Controller</td><td><span class="stat s-ok">PASS</span></td></tr>
+          <tr><td>Accrual completeness</td><td>Understated cost</td><td>GL accountant</td><td>Monthly</td><td>Accrual log</td><td>FD</td><td><span class="stat s-due">EXCEPTION</span></td></tr>
+          <tr><td>Access &amp; segregation of duties</td><td>Override / fraud</td><td>IT + Finance</td><td>Quarterly</td><td>Access review</td><td>Controller</td><td><span class="stat s-ok">PASS</span></td></tr>
+        </table></div>
+        <div class="formsnap" style="border-top:1px dashed var(--line);">
+          <div class="fr"><span>PBC / audit-request tracker — every item owned &amp; dated</span><span class="stat s-due">92% · 3 open</span></div>
+          <div class="fr"><span>Approval log — who signed what, and when</span><span class="stat s-ok">COMPLETE</span></div>
+          <div class="fr"><span>Data lineage — figure → source → system</span><span class="stat s-ok">TRACED</span></div>
+          <div class="fr"><span>Change-control log — every model version</span><span class="stat s-ok">VERSIONED</span></div>
+          <div class="fr"><span>Exception ageing — open items by days outstanding</span><span class="stat s-due">2 &gt; 30d</span></div>
+        </div>
+        <div class="snap-cap">the CPA question isn't "does it look good?" — it's <b>"can I evidence this?"</b> Control matrix, PBC tracker, approvals, lineage and change log make every number defensible on audit.</div>
       </div>
 
       <div class="card" style="margin-top:16px;padding:0;overflow:hidden;">
@@ -642,6 +685,33 @@
         <span class="tool t-ai">AI-ASSISTED</span><span class="tool t-dax">PYTHON</span><span class="chip">Economic research</span>
       </div>
       </div>
+
+      <div class="card" style="margin-top:16px;padding:0;overflow:hidden;">
+        <div class="pbi-head">Planning governance — the operating model behind the forecast <i>AFP-standard · illustrative</i></div>
+        <div class="rl-grid" style="padding:14px 16px;gap:22px;">
+          <div>
+            <b style="font-size:12px;color:var(--navy-deep);">Driver tree — how revenue is actually built</b>
+            <div class="dtree">
+              <div class="lvl"><span class="node root">Revenue</span></div>
+              <div class="lvl ind"><span class="op">=</span><span class="node">Active clients</span><span class="op">×</span><span class="node">Average fee</span></div>
+              <div class="lvl ind"><span class="op">↳</span><span class="node">Pipeline</span><span class="op">·</span><span class="node">Win rate</span><span class="op">·</span><span class="node">Churn</span></div>
+            </div>
+            <p style="font-size:11px;color:var(--muted);margin-top:8px;">Every plan line traces to a driver, not a typed number — so a review can challenge the <i>assumption</i>, not the total.</p>
+          </div>
+          <div>
+            <b style="font-size:12px;color:var(--navy-deep);">Governance controls</b>
+            <div class="formsnap" style="padding:6px 0 0;">
+              <div class="fr"><span>Assumption register — owned &amp; dated</span><span class="stat s-ok">GOVERNED</span></div>
+              <div class="fr"><span>Forecast accuracy vs actuals — tracked</span><span class="stat s-ok">±4%</span></div>
+              <div class="fr"><span>Model QA checklist — run before publish</span><span class="stat s-ok">PASSED</span></div>
+              <div class="fr"><span>Version control — every baseline locked</span><span class="stat s-ok">LOCKED</span></div>
+              <div class="fr"><span>Scenario library — reusable, comparable</span><span class="stat s-ok">6 SAVED</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="phases" style="border-top:1px dashed var(--line);"><b>PLANNING CALENDAR</b><span>Annual budget</span><em>→</em><span>Reforecast 3+9</span><em>→</em><span>6+6</span><em>→</em><span>9+3</span><em>→</em><span>Rolling monthly</span><em>→</em><span>Budget-owner submissions</span></div>
+        <div class="snap-cap">not just dashboards — the full planning cycle: budget calendar, budget-owner submission workflow, assumption governance, forecast-accuracy tracking, model QA and version control</div>
+      </div>
       </div>
     </details>
 
@@ -719,6 +789,45 @@
         <p style="font-size:13.5px;color:#A9BBD1;margin:8px 0 16px;">Custom builds start from the same architecture. Scoped in one call.</p>
         <div><a class="btn" href="#contact" style="background:#fff;border-color:#fff;">Tell me about it →</a></div>
       </div>
+      </div>
+
+      <div class="card" style="margin-top:16px;padding:0;overflow:hidden;">
+        <div class="pbi-head" style="background:#3A2E6E;">Capital &amp; investor intelligence — the value lens <i>CFA-grade · illustrative data</i></div>
+        <div class="kpis5" style="margin:14px 16px 0;">
+          <div class="kpi"><span>ROIC</span><b>18.4%</b><span class="pos">&gt; WACC</span></div>
+          <div class="kpi"><span>ROCE</span><b>21.0%</b></div>
+          <div class="kpi"><span>WACC / hurdle</span><b>11.2%</b></div>
+          <div class="kpi"><span>Net debt / EBITDA</span><b>1.8×</b><span>≤ 3.0× cov.</span></div>
+          <div class="kpi"><span>Debt-capacity headroom</span><b>4.1M</b></div>
+        </div>
+        <div class="rl-grid" style="padding:12px 16px;gap:18px;">
+          <div>
+            <b style="font-size:12px;color:var(--navy-deep);">Investment cases — NPV / IRR vs hurdle</b>
+            <div class="xls" style="margin-top:8px;"><table>
+              <tr><th>Case</th><th>NPV</th><th>IRR</th><th>Verdict</th></tr>
+              <tr><td>New market entry</td><td class="pos">+2.4M</td><td>24%</td><td><span class="stat s-ok">FUND</span></td></tr>
+              <tr><td>Platform upgrade</td><td class="pos">+0.9M</td><td>16%</td><td><span class="stat s-ok">FUND</span></td></tr>
+              <tr><td>Legacy line</td><td class="neg">−0.3M</td><td>7%</td><td><span class="stat s-red">HOLD</span></td></tr>
+            </table></div>
+          </div>
+          <div>
+            <b style="font-size:12px;color:var(--navy-deep);">Valuation bridge — enterprise-value drivers</b>
+            <div class="wf" style="height:80px;margin-top:8px;" aria-hidden="true">
+              <div class="col"><i class="base" style="bottom:0;height:48%"></i></div>
+              <div class="col"><i class="up" style="bottom:48%;height:16%"></i></div>
+              <div class="col"><i class="up" style="bottom:64%;height:10%"></i></div>
+              <div class="col"><i class="down" style="bottom:66%;height:8%"></i></div>
+              <div class="col"><i class="tot" style="bottom:0;height:66%"></i></div>
+            </div>
+            <div class="wf-x"><span>Base EV</span><span>EBITDA↑</span><span>Multiple</span><span>Net debt</span><span>Equity</span></div>
+          </div>
+        </div>
+        <div class="formsnap" style="border-top:1px dashed var(--line);">
+          <div class="fr"><span>Capital-allocation memo — uses of cash ranked by return</span><span class="stat s-ok">RANKED</span></div>
+          <div class="fr"><span>Covenant forecast — headroom projected four quarters out</span><span class="stat s-ok">CLEAR</span></div>
+          <div class="fr"><span>Market &amp; sector benchmark — margin &amp; growth vs peers</span><span class="stat s-due">2ND QUARTILE</span></div>
+        </div>
+        <div class="snap-cap">the investor's question isn't "what happened" — it's <b>"is capital earning its cost?"</b> ROIC vs WACC, NPV/IRR cases, debt capacity, covenant forecast, valuation bridge and capital-allocation ranking. <i>Developing layer — advisory, not investment advice.</i></div>
       </div>
       </div>
     </details>
@@ -1343,9 +1452,9 @@
 
 <section id="future" class="future-band">
   <div class="wrap">
-    <span class="kicker reveal">Where this is heading</span>
-    <h2 class="reveal" style="color:#fff;">Finance 2027–2030: built for it today.</h2>
-    <p class="lbl reveal">Every module above is architected for the finance function that's coming — not the one that's leaving.</p>
+    <span class="kicker reveal">The horizon · roadmap, not the offer</span>
+    <h2 class="reveal" style="color:#fff;">What you deploy today is built for 2030.</h2>
+    <p class="lbl reveal">To be clear: everything you buy is in the suite above — proven, in production. This section is the <b style="color:#fff;">roadmap</b>: where the practice is heading, and why today's build won't age out from under you.</p>
     <div class="grid">
       <div class="fcard reveal">
         <span class="yr">2027</span>
@@ -1431,6 +1540,20 @@
       <a class="btn btn-p" href="mailto:Karim.Hisham.Elshafei@gmail.com?subject=Intro%20call%20%E2%80%94%20The%20Finance%20Engine&body=Hi%20Kareem%2C%0A%0AI'd%20like%20to%20schedule%20an%20intro%20call.%0A%0ACompany%3A%20%0ARole%3A%20%0AAvailability%20this%20week%3A%20%0A%0AThanks!">Schedule a call</a>
       <a class="btn btn-ghost" href="mailto:Karim.Hisham.Elshafei@gmail.com?subject=Project%20brief%20%E2%80%94%20The%20Finance%20Engine&body=Hi%20Kareem%2C%0A%0AHere's%20what's%20slowing%20us%20down%3A%20%0A%0A">Send a brief</a>
       <a class="btn btn-ghost" href="https://www.linkedin.com/in/kareemhisham" target="_blank" rel="noopener">Message on LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<section id="fineprint" class="alt">
+  <div class="wrap">
+    <span class="kicker reveal">The fine print</span>
+    <h2 class="reveal">How I work — and how your data stays yours.</h2>
+    <p class="lbl reveal">The trust architecture behind every engagement. Boring on purpose; this is the part that lets a CFO say yes.</p>
+    <div class="grid">
+      <div class="card reveal"><h3>Confidentiality, first</h3><p style="font-size:13.5px;color:var(--muted);margin-top:6px;">Every system shown here is a generic rebuild on illustrative data — no client or employer file, brand or figure is ever published or reused. Your build is yours alone, under NDA.</p></div>
+      <div class="card reveal"><h3>Fixed scope, clear terms</h3><p style="font-size:13.5px;color:var(--muted);margin-top:6px;">Deployments are scoped and priced per engagement — no open-ended hourly drift. Milestones, deliverables and a handover date are agreed before work starts.</p></div>
+      <div class="card reveal"><h3>You own it — including the keys</h3><p style="font-size:13.5px;color:var(--muted);margin-top:6px;">Every deployment ships with documentation, an administrator runbook and training, so your team runs the system with no dependency on me.</p></div>
+      <div class="card reveal"><h3>Standards &amp; scope of advice</h3><p style="font-size:13.5px;color:var(--muted);margin-top:6px;">Reporting aligned to IFRS &amp; US GAAP; controls designed SOX-aligned; FP&amp;A to the AFP standard. Advisory outputs support your decisions — they are not audit, tax, or investment advice.</p></div>
     </div>
   </div>
 </section>
