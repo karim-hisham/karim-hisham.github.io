@@ -6,20 +6,21 @@
 <title>Kareem Hesham — The Finance Engine | Office of the CFO, engineered</title>
 <meta name="description" content="Board-grade finance infrastructure, deployed in weeks: executive reporting, disciplined close, working capital command, consolidation, risk analytics and finance enablement. IFRS, SOX-aligned, AI-ready.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
     --navy: #1B66C9; --navy-deep: #0A2A4E; --ink: #101826; --muted: #55606e;
-    --line: #e4e8ee; --bg: #f5f7fa; --card: #fff; --chip: #edf1f6;
+    --line: #E2E5E2; --bg: #F4F5F4; --card: #fff; --chip: #ECEFEC;
+    --spring: cubic-bezier(.34,1.45,.4,1);
     --teal: #0FB5A6; --green: #0E7C5B; --green-bg: #DFF5EC; --amber-bg: #FBEEDC; --amber: #8A5310;
     --red: #B3362A; --red-bg: #FBE5E2; --radius: 14px;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: "Inter", -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: var(--ink); line-height: 1.65; background: var(--card); }
+  body { font-family: "IBM Plex Sans", "Inter", -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: var(--ink); line-height: 1.65; background: var(--card); }
   .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-  h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.08; font-weight: 800; letter-spacing: -1.2px; }
-  h2 { font-size: clamp(24px, 3vw, 32px); font-weight: 700; letter-spacing: -0.6px; }
+  h1 { font-family: "IBM Plex Serif", Georgia, serif; font-size: clamp(32px, 5vw, 52px); line-height: 1.1; font-weight: 700; letter-spacing: -0.8px; }
+  h2 { font-family: "IBM Plex Serif", Georgia, serif; font-size: clamp(24px, 3vw, 32px); font-weight: 700; letter-spacing: -0.4px; }
   h3 { font-size: 16px; font-weight: 650; letter-spacing: -0.1px; }
   a { color: var(--navy); text-decoration: none; }
   section { padding: 72px 0; }
@@ -182,6 +183,33 @@
   .dtree .root { background: var(--navy-deep); color:#fff; border:none; font-weight:600; }
   .dtree .op { color:#b3bcc8; font-weight:700; }
   .dtree .ind { padding-left: 20px; }
+  /* V10 — TIER THEME WINDOWS & SPRING MOTION */
+  details.tier .tier-body { animation: tierIn .55s var(--spring) backwards; }
+  @keyframes tierIn { from { opacity: 0; transform: translateY(16px) scale(.995); } }
+  details.th-close { background: linear-gradient(180deg, #F0F7F1 0%, #fff 260px); border-color: #CFE0D4; }
+  details.th-close summary:hover { background: #E7F1E9; }
+  details.th-close[open] { box-shadow: 0 14px 40px rgba(33,115,70,0.08); }
+  details.th-close .card { border-color: #D8E6DC; }
+  details.th-plan { background: linear-gradient(180deg, #EEF3FA 0%, #fff 260px); border-color: #CCDCEF; }
+  details.th-plan summary:hover { background: #E4EDF8; }
+  details.th-plan[open] { box-shadow: 0 14px 40px rgba(27,102,201,0.08); }
+  details.th-plan .card { border-color: #D6E2F1; }
+  details.th-gov { background: linear-gradient(180deg, #F1EEF8 0%, #fff 260px); border-color: #D8D0EC; }
+  details.th-gov summary:hover { background: #EAE5F5; }
+  details.th-gov[open] { box-shadow: 0 14px 40px rgba(91,63,181,0.08); }
+  details.th-gov .card { border-color: #DFD8EF; }
+  .xls-tabs span { transition: transform .35s var(--spring), background .2s ease; }
+  .xls-tabs span:hover { transform: translateY(-2px); }
+  .btn { transition: transform .35s var(--spring), border-color .2s ease, box-shadow .3s ease; }
+  .wb-pane.on { animation: paneIn .4s var(--spring) backwards; }
+  @keyframes paneIn { from { opacity: 0; transform: translateY(9px); } }
+  .legalrec summary { padding: 16px 22px; }
+  .legalrec summary h3 { font-size: 15.5px; }
+  .lr { margin: 0 0 16px; }
+  .lr b.t { display: block; font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--navy-deep); margin-bottom: 4px; }
+  .lr p, .lr li { font-size: 13px; color: #3d4653; }
+  .lr ol, .lr ul { padding-left: 20px; }
+  .lr .lead-line { font-size: 13.5px; font-weight: 600; color: var(--ink); border-left: 3px solid var(--teal); padding: 4px 0 4px 14px; margin-bottom: 16px; }
   /* SHOWROOM INTERACTIVE CONTROLS */
   .demo-strip { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 0 0 20px; font-size: 13px; color: var(--muted); }
   .demo-strip .pulse-tag { font-size: 11px; font-weight: 800; letter-spacing: 0.8px; padding: 4px 12px; border-radius: 999px; background: var(--navy-deep); color: #7DD3FC; }
@@ -321,7 +349,7 @@
 <div class="hero-band">
   <div class="wrap hero">
     <div>
-      <span class="kicker">Office of the CFO · Engineered</span>
+      <span class="kicker">01 · The Question — Office of the CFO, engineered</span>
       <h1>Board-grade finance, deployed in weeks. Not years.</h1>
       <p class="sub">I build the reporting, close and planning infrastructure multinationals run on — packaged as fixed-scope systems any company can deploy. Rigorous enough for your auditors. Readable by everyone at the table.</p>
       <p>
@@ -378,7 +406,7 @@
 
 <section id="suite" class="alt">
   <div class="wrap">
-    <span class="kicker reveal">The Executive Suite</span>
+    <span class="kicker reveal">02 · The Suite</span>
     <h2 class="reveal">A complete finance operating system — module by module.</h2>
     <p class="lbl reveal">One practice, three grades of service — <b style="color:var(--ink);">Controller-grade</b> close and control, <b style="color:var(--ink);">CFO-grade</b> planning and performance, and <b style="color:var(--ink);">Governance-grade</b> board and investor reporting. Every module is a system I designed, built and ran in production inside multinationals — rebuilt here with illustrative data. Expand a tier; take what your review is missing.</p>
 
@@ -391,7 +419,7 @@
     </div>
     <p class="lbl reveal" style="margin:-8px 0 30px;"><b style="color:var(--ink);">Not sure where you sit?</b> Most engagements start at step 1 or 2 — one call scopes it. Typical first deployment: 2–6 weeks, depending on entity count and data readiness.</p>
 
-    <details class="tier reveal" open>
+    <details class="tier reveal th-close" open>
       <summary>
         <span class="tier-badge tb-a">TIER 1 · CONTROLLER-GRADE</span>
         <h3>Close &amp; control</h3>
@@ -592,7 +620,7 @@
       </div>
     </details>
 
-    <details class="tier reveal">
+    <details class="tier reveal th-plan">
       <summary>
         <span class="tier-badge tb-b">TIER 2 · CFO-GRADE</span>
         <h3>Plan, perform &amp; decide</h3>
@@ -715,7 +743,7 @@
       </div>
     </details>
 
-    <details class="tier reveal">
+    <details class="tier reveal th-gov">
       <summary>
         <span class="tier-badge tb-c">TIER 3 · GOVERNANCE-GRADE</span>
         <h3>Board, shareholder &amp; investor</h3>
@@ -836,7 +864,7 @@
 
 <section id="platform">
   <div class="wrap">
-    <span class="kicker reveal">The showroom · Take the operating system for a test drive</span>
+    <span class="kicker reveal">03 · The Showroom — take the operating system for a test drive</span>
     <h2 class="reveal">One product. Many hands. This is how it runs each month.</h2>
     <p class="lbl reveal">These aren't screenshots — they're faithful replicas of production systems: same page architecture, same measure logic, illustrative numbers. Controllership, business finance, FP&amp;A, treasury and leadership each play their bar, on a close calendar that conducts the whole month. Start with the rhythm below, then click through the instruments — switch tabs, flip time views, drag the simulators.</p>
     <div class="demo-strip reveal">
@@ -1407,7 +1435,7 @@
 
 <section id="method" class="alt">
   <div class="wrap">
-    <span class="kicker reveal">The method</span>
+    <span class="kicker reveal">04 · The Method</span>
     <h2 class="reveal">From messy to institutional — in the only order that works.</h2>
     <p class="lbl reveal">Written for CEOs and controllers alike: each stage locks before the next begins. That sequencing is why multinationals stay fast without breaking — and why retrofit projects fail when they start with dashboards.</p>
     <div class="method">
@@ -1452,7 +1480,7 @@
 
 <section id="future" class="future-band">
   <div class="wrap">
-    <span class="kicker reveal">The horizon · roadmap, not the offer</span>
+    <span class="kicker reveal">05 · The Horizon — roadmap, not the offer</span>
     <h2 class="reveal" style="color:#fff;">What you deploy today is built for 2030.</h2>
     <p class="lbl reveal">To be clear: everything you buy is in the suite above — proven, in production. This section is the <b style="color:#fff;">roadmap</b>: where the practice is heading, and why today's build won't age out from under you.</p>
     <div class="grid">
@@ -1480,7 +1508,7 @@
 
 <section id="about">
   <div class="wrap">
-    <span class="kicker reveal">Get to know me</span>
+    <span class="kicker reveal">06 · The Practitioner</span>
     <h2 class="reveal">Six years inside multinationals. Every system above, built in production.</h2>
     <p class="lbl reveal">Finance professional across commercial real estate, global media, FMCG, telecom and banking — combining controllership (IFRS statutory close, multi-entity consolidation, cross-border tax) with FP&amp;A and the automation layer on top. Based in New Cairo, Egypt · serving clients worldwide.</p>
     <div class="tl">
@@ -1519,6 +1547,11 @@
       <p>“Kareem was always proactive and reliable. He consistently looked for ways to streamline and automate data processes… I have no doubt he'll be a great asset in his next role.”</p>
       <span>— Associate Finance Director, direct manager (global real estate firm)</span>
     </div>
+    <div class="reveal" style="margin-top:30px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+      <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="kareemhisham" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/kareemhisham?trk=profile-badge">Kareem Hesham — LinkedIn</a></div>
+      <span style="font-size:13px;color:var(--muted);">Full history, recommendations and credentials on LinkedIn · code and version history on <a href="https://github.com/karim-hisham/karim-hisham.github.io" target="_blank" rel="noopener">GitHub</a>.</span>
+    </div>
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
   </div>
 </section>
 
@@ -1546,7 +1579,7 @@
 
 <section id="fineprint" class="alt">
   <div class="wrap">
-    <span class="kicker reveal">The fine print</span>
+    <span class="kicker reveal">07 · The Fine Print</span>
     <h2 class="reveal">How I work — and how your data stays yours.</h2>
     <p class="lbl reveal">The trust architecture behind every engagement. Boring on purpose; this is the part that lets a CFO say yes.</p>
     <div class="grid">
@@ -1555,6 +1588,56 @@
       <div class="card reveal"><h3>You own it — including the keys</h3><p style="font-size:13.5px;color:var(--muted);margin-top:6px;">Every deployment ships with documentation, an administrator runbook and training, so your team runs the system with no dependency on me.</p></div>
       <div class="card reveal"><h3>Standards &amp; scope of advice</h3><p style="font-size:13.5px;color:var(--muted);margin-top:6px;">Reporting aligned to IFRS &amp; US GAAP; controls designed SOX-aligned; FP&amp;A to the AFP standard. Advisory outputs support your decisions — they are not audit, tax, or investment advice.</p></div>
     </div>
+
+    <details class="tier legalrec reveal">
+      <summary>
+        <span class="tier-badge" style="background:#EEF0EE;color:#3d4653;">LEGAL RECORD</span>
+        <h3>The full clauses — status, IP, separation, conflicts</h3>
+        <span class="chev">➔</span>
+        <span class="sum-sub">The complete, dated legal architecture behind this portfolio. Written for professional and legal scrutiny.</span>
+      </summary>
+      <div class="tier-body" style="padding-top:14px;">
+        <p class="lr lead-line">This site is a dated, independent portfolio record — not an active solicitation of work that conflicts with any employment, client, confidentiality, non-competition, non-solicitation, or professional obligation.</p>
+
+        <div class="lr"><b class="t">1 · Status</b>
+          <p>The Finance Engine is an independent professional portfolio published by Kareem Hesham. It is not a registered company, and nothing on this site constitutes an offer capable of acceptance. Engagements, if any, arise only under a separately signed scope of work.</p></div>
+
+        <div class="lr"><b class="t">2 · Pre-existing &amp; original work — IP schedule</b>
+          <p>The following works are original creations of the practitioner, published as a dated record:</p>
+          <ol>
+            <li>This website's architecture, code, copy and design</li>
+            <li>Module naming, packaging and tier structure</li>
+            <li>Illustrative page layouts, model structures and measure-logic patterns shown here</li>
+            <li>Runbooks, checklists and implementation methodology as presented</li>
+            <li>Synthetic demonstration datasets and all illustrative figures</li>
+          </ol>
+          <p>Evidence of dating: public repository commit history, file version history and publication dates. Deliverables in client engagements are licensed or transferred per the signed scope; pre-existing IP listed here remains the practitioner's.</p></div>
+
+        <div class="lr"><b class="t">3 · No employer or client materials</b>
+          <p>No employer or client data, files, documents, dashboards, templates, code, internal communications or confidential terminology is published or reused anywhere on this site. Every demonstration is a generic rebuild on synthetic, illustrative data.</p></div>
+
+        <div class="lr"><b class="t">4 · Standard practice vs original implementation</b>
+          <p>Standard finance disciplines are not claimed as proprietary — month-end close, FP&amp;A cadence, consolidation, cash forecasting, balance-sheet substantiation, board reporting and variance analysis are the profession's shared body of practice. What is claimed as original is the specific implementation: these templates, page architectures, model structures, workflow designs, runbooks, naming and packaging.</p></div>
+
+        <div class="lr"><b class="t">5 · Scope separation</b>
+          <p>This portfolio offers no real-estate brokerage, valuation, leasing, property management, capital-markets advisory, asset management, or any other regulated real-estate service. Its scope is limited to finance operating systems: reporting architecture, planning models, control workflows and implementation frameworks.</p></div>
+
+        <div class="lr"><b class="t">6 · Restricted-client &amp; non-solicitation firewall</b>
+          <p>This portfolio does not solicit, target, or accept work from any current employer's clients, restricted or prospective clients, vendors, partners, or relationships obtained through employment. Any inquiry is screened for conflicts before discussion, proposal or onboarding.</p></div>
+
+        <div class="lr"><b class="t">7 · Client data never pooled</b>
+          <p>Each engagement is isolated. No client data is aggregated across clients, benchmarked into shared pools, or reused in other work. Market and sector research draws exclusively on public and licensed sources.</p></div>
+
+        <div class="lr"><b class="t">8 · Trademarks, standards &amp; no endorsement</b>
+          <p>Employer names, role titles and career history appear as factual background only and imply no sponsorship, endorsement, approval, partnership, client relationship or authorization by any employer, former employer, affiliate, licensor or group company. All trademarks — including Microsoft Excel, Power BI, and referenced standards bodies — are the property of their respective owners.</p></div>
+
+        <div class="lr"><b class="t">9 · No regulated advice</b>
+          <p>Nothing on this site is audit, assurance, tax, legal, investment, valuation, securities or other regulated financial advice. Illustrative analytics are demonstrations of method, not recommendations.</p></div>
+
+        <div class="lr"><b class="t">10 · Conflict review before any engagement</b>
+          <p>No engagement is accepted until a conflict review is completed — covering current employment obligations, restricted clients, confidentiality duties, non-competition restrictions and applicable professional rules. Future engagements are governed by a signed scope of work, confidentiality terms and, where required, professional review.</p></div>
+      </div>
+    </details>
   </div>
 </section>
 
